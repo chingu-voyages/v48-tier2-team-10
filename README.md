@@ -36,6 +36,6 @@ coding!
 
 - Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-
+- Teammate name #3: Allen Mathews https://github.com/allenmathews / https://www.linkedin.com/in/allen-mathews-5ba62280/
    ...
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
