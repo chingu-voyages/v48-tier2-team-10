@@ -35,7 +35,7 @@ your repo access and to practice PR'ing with your team *before* you start
 coding!
 
 - Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
-- Teammate name #2: Andrei Maier[GitHub](https://github.com/andreimaier) / [LinkedIn](https://www.linkedin.com/in/andreimaier/)
+- Teammate name #2: Andrei Maier [GitHub](https://github.com/andreimaier) / [LinkedIn](https://www.linkedin.com/in/andreimaier/)
 - Teammate name #3: Allen Mathews [GitHub](https://github.com/allenmathews) / [LinkedIn](https://www.linkedin.com/in/allen-mathews-5ba62280/)
-   ...
+   
 - Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
