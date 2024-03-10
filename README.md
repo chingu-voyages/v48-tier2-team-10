@@ -37,5 +37,4 @@ coding!
 - Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Teammate name #2: Andrei Maier [GitHub](https://github.com/andreimaier) / [LinkedIn](https://www.linkedin.com/in/andreimaier/)
 - Teammate name #3: Allen Mathews [GitHub](https://github.com/allenmathews) / [LinkedIn](https://www.linkedin.com/in/allen-mathews-5ba62280/)
-   
-- Teammate name #n: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Teammate name #4: Dolph Jose Navin [GitHub](https://github.com/shvinjas) / [LinkedIn](https://www.linkedin.com/in/jose-jd-445a41292/)
