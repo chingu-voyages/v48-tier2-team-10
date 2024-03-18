@@ -39,3 +39,4 @@ coding!
 - Teammate name #3: Allen Mathews [GitHub](https://github.com/allenmathews) / [LinkedIn](https://www.linkedin.com/in/allen-mathews-5ba62280/)
 - Teammate name #4: Dolph Jose Navin [GitHub](https://github.com/shvinjas) / [LinkedIn](https://www.linkedin.com/in/jose-jd-445a41292/)
 - Teammate name #5: Jess [GitHub](https://github.com/jessabc)
+- Teammate name #6: Sean Lin  [GitHub](https://github.com/prosealogy) / [LinkedIn](https://www.linkedin.com/in/sean-lin-337491b9/)
