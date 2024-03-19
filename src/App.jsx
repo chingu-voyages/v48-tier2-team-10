@@ -1,11 +1,24 @@
-import './App.css'
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Landing from "./pages/Landing";
+import SearchPage from "./pages/SearchPage";
+import DinosaurPage from "./pages/DinosaurPage";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
-    <div>
-      <h1>Tier 2 - Team 10 - React Project</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Landing />} />
+          <Route path="search" element={<SearchPage />} />
+          <Route path="dinosaurs/:dino" element={<DinosaurPage />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
