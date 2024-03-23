@@ -1,12 +1,11 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { DinoDataContext } from "../context/DinoDataContext";
+import { useParams } from 'react-router-dom'
+import { DinoDataContext } from '../context/DinoDataContext'
 
 export default function DinosaurPage() {
-  const { dino } = useParams();
+  const { dino } = useParams()
 
   // is this dinoData needed from useContext, or is the data needed passed through props? just putting it here for now in case...
-  const { dinoData } = useContext(DinoDataContext);
+  const { dinoData } = useContext(DinoDataContext)
 
-  return <div>Dinosaur Page - {dino}</div>;
+  return <div>Dinosaur Page - {dino}</div>
 }
