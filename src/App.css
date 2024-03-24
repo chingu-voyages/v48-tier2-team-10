@@ -62,3 +62,8 @@ h6 {
 }
 
 /* https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+html {
+  background-color: #fefaf4;
+  font-family: 'Patua One', serif;
+}
