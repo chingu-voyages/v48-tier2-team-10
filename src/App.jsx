@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
+import Layout from "./pages/Layout/Layout";
 import Landing from "./pages/Landing";
 import SearchPage from "./pages/SearchPage";
 import DinosaurPage from "./pages/DinosaurPage";

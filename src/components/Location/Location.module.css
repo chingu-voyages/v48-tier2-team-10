@@ -1,0 +1,24 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.title {
+  font-size: 32px;
+  /* line-height: 44.8; */
+  color: #836645;
+  /* font-family: "Patua One", serif; */
+}
+
+.notFound {
+  color: #836645;
+  text-align: center;
+}
