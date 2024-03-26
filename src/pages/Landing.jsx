@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DinoDataContext } from "../context/DinoDataContext";
+import { placeholderData } from "../components/Location/placeholderData";
 import Location from "../components/Location/Location";
 
 export default function Landing() {
@@ -12,9 +13,8 @@ export default function Landing() {
   if (error) return <p>cannot fetch dinosaurs</p>;
 
   return (
-    <>
-      <h1>landing</h1>
-      <Location />
-    </>
+    <div>
+      <Location dinoData={placeholderData} />
+    </div>
   );
 }
