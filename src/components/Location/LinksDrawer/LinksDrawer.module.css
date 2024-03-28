@@ -1,0 +1,51 @@
+/* https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/ */
+
+.sideNav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  padding: 60px 50px 30px 30px;
+  background-color: #fff;
+  transition: 2s;
+  overflow-y: auto;
+}
+
+/* This makes the side menu visible */
+.sideNavActive {
+  right: 0;
+  transition: 0.5s;
+}
+
+/* Style the side menu's links */
+.sideNav a {
+  margin: 8px 0;
+  text-decoration: none;
+  font-size: 16px;
+  color: #a18a70;
+  display: block;
+  /* transition: 0.3s; */
+}
+
+.sideNav a:hover {
+  color: #836645;
+}
+
+/* Stye the close button */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #836645;
+  cursor: pointer;
+  /* transition: 2s; */
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
