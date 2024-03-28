@@ -1,11 +1,10 @@
-import { ResponsivePieCanvas } from "@nivo/pie";
-import "./DonutChart.Module.css";
-import React from "react";
+import { ResponsivePieCanvas } from '@nivo/pie'
+import './DonutChart.Module.css'
 
 const DonutChart = ({ data }) => {
   const filteredData = data.filter(
     (entry) => entry.value !== null && entry.value !== undefined
-  );
+  )
 
   return (
     <>
@@ -20,59 +19,59 @@ const DonutChart = ({ data }) => {
           padAngle={0.9}
           cornerRadius={1}
           activeOuterRadiusOffset={8}
-          colors={{ scheme: "nivo" }}
+          colors={{ scheme: 'nivo' }}
           borderColor={{
-            from: "color",
-            modifiers: [["darker", 0.6]],
+            from: 'color',
+            modifiers: [['darker', 0.6]]
           }}
           arcLabelsRadiusOffset={100}
           arcLinkLabelsSkipAngle={100}
           arcLinkLabelsTextColor="white"
           arcLinkLabelsThickness={0}
-          arcLinkLabelsColor={{ from: "color" }}
+          arcLinkLabelsColor={{ from: 'color' }}
           arcLabelsSkipAngle={10}
           arcLabelsTextColor="#333333"
           defs={[
             {
-              id: "dots",
-              type: "patternDots",
-              background: "inherit",
-              color: "rgba(255, 255, 255, 0.3)",
+              id: 'dots',
+              type: 'patternDots',
+              background: 'inherit',
+              color: 'rgba(255, 255, 255, 0.3)',
               size: 4,
               padding: 1,
-              stagger: true,
+              stagger: true
             },
             {
-              id: "lines",
-              type: "patternLines",
-              background: "inherit",
-              color: "rgba(255, 255, 255, 0.3)",
+              id: 'lines',
+              type: 'patternLines',
+              background: 'inherit',
+              color: 'rgba(255, 255, 255, 0.3)',
               rotation: -45,
               lineWidth: 6,
-              spacing: 10,
-            },
+              spacing: 10
+            }
           ]}
           legends={[
             {
-              anchor: "bottom",
-              direction: "column",
+              anchor: 'bottom',
+              direction: 'column',
               justify: false,
               translateX: 140,
               translateY: 20,
               itemsSpacing: 15,
               itemWidth: 40,
               itemHeight: 15,
-              itemTextColor: "black",
-              itemDirection: "left-to-right",
+              itemTextColor: 'black',
+              itemDirection: 'left-to-right',
               itemOpacity: 1,
               symbolSize: 14,
-              symbolShape: "circle",
-            },
+              symbolShape: 'circle'
+            }
           ]}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default DonutChart;
+export default DonutChart

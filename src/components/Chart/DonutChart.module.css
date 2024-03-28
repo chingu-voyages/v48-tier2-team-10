@@ -5,13 +5,15 @@
   border: 2px solid #836645;
   border-radius: 5px;
 }
+
 .topContainer p {
   margin: 20px 90px;
-  font-family: "inter";
+  font-family: 'inter';
   font-weight: 500;
   color: #836645;
   font-size: 20px;
 }
+
 @media only screen and (max-width: 768px) {
   .topContainer {
     max-width: 357px;
