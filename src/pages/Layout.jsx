@@ -9,8 +9,10 @@ export default function Layout() {
   return (
     <DinoDataContextProvider>
       <Header />
+
       <Outlet />
-      <Chart/>
+
+      {/* <Chart /> */}
       <Footer />
     </DinoDataContextProvider>
   );
