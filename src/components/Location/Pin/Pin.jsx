@@ -19,7 +19,7 @@ export default function Pin({ dino, inMultipleCountries, toggleModal }) {
         <Marker
           position={[dino.position?.latitude, dino.position?.longitude]}
           icon={customIcon}
-          eventHandlers={{ click: () => toggleModal(dino) }}
+          eventHandlers={toggleModal && { click: () => toggleModal(dino) }}
         >
           {location.pathname != "/" && (
             // popup for dino on dinosaur page
