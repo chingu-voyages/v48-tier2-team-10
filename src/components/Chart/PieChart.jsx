@@ -1,10 +1,10 @@
 import { Pie } from '@nivo/pie'
-import './PieChart.Module.css'
+import styles from './PieChart.module.css'
 
 const PieChart = ({ data }) => {
   return (
     <>
-      <div className="pieContainer">
+      <div className={styles.pieContainer}>
         <p>Diet Composition</p>
 
         <Pie

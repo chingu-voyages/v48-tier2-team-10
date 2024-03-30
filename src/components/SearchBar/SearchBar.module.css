@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.inputWrapper {
+  display: flex;
+}
+
+.searchInput {
+  border: 1px solid #a18a70;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px 0 0 8px;
+  min-width: 297px;
+}
+
+.searchInput::placeholder {
+  font-family: 'Inter', sans-serif;
+  color: #bababa;
+  font-weight: 400;
+}
+
+.searchBtn {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background-color: #836645;
+  border: 1px solid #a18a70;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+}

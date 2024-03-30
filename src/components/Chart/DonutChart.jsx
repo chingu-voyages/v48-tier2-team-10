@@ -1,5 +1,5 @@
 import { ResponsivePieCanvas } from '@nivo/pie'
-import './DonutChart.Module.css'
+import styles from './DonutChart.module.css'
 
 const DonutChart = ({ data }) => {
   const filteredData = data.filter(
@@ -8,7 +8,7 @@ const DonutChart = ({ data }) => {
 
   return (
     <>
-      <div className="topContainer">
+      <div className={styles.topContainer}>
         <p>Type Composition</p>
         <ResponsivePieCanvas
           data={filteredData}
