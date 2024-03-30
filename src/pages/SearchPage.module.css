@@ -1,0 +1,11 @@
+.filterBtn {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #39393c;
+  cursor: pointer;
+  padding: 12px 24px;
+  background: none;
+  border: 2px solid #39393c;
+}
