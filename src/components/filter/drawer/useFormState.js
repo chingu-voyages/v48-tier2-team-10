@@ -19,7 +19,7 @@ export default function useFormState(searchResults) {
     NALength: false,
   };
 
-  // the coutnries for the inital form state is dynamic ie depends on the countries from the search results, this is so dont get a huge list of all countries if  not needed
+  // the countries for the inital form state is dynamic ie depends on the countries from the search results, this is so dont get a huge list of all countries if not needed
   const getCountryInitialformState = () => {
     let countries = {};
     getCountryCheckboxes().forEach((country) => {

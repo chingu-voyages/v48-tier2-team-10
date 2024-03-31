@@ -1,4 +1,4 @@
-// this function generates the accordions ie title and checkboxes
+// this function generates the data for the accordions ie title and checkboxes
 
 export default function useAccordianData(searchResults) {
   const getDietCheckboxes = () => {
