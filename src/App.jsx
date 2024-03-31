@@ -5,6 +5,7 @@ import Landing from "./pages/Landing";
 import SearchPage from "./pages/SearchPage";
 import DinosaurPage from "./pages/DinosaurPage";
 import NoPage from "./pages/NoPage";
+import DinoOfTheDay from "./pages/DinoOfTheDay";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
+      <DinoOfTheDay />
     </BrowserRouter>
   );
 }
