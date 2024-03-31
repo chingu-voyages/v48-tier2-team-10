@@ -1,15 +1,30 @@
-import React from 'react';
-// Import CSS
+import React, { useState, useEffect } from 'react';
 
-function DinoOfTheDay() {
-    return (
-        <div className="dino-of-the-day">
-            <h2>Dino of the Day</h2>
-            <p>Name: Tyrannosaurus Rex</p>
-            <p>Diet: Carnivore</p>
-            
+const DinoOfTheDay = () => {
+  const [dinoData, setDinoData] = useState(null);
+
+  useEffect(() => {
+    fetch('https://chinguapi.onrender.com/dinosaurs');
+      .then(response => response.json())
+      .then(data => {
+        setDinoData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []); 
+
+  return (
+    <div>
+      <h2>Dino of the Day</h2>
+      {dinoData && (
+        <div>
+          <h3>{dinoData.name}</h3>
+          <p>{dinoData.description}</p>
         </div>
-    );
-}
+      )}
+    </div>
+  );
+};
 
 export default DinoOfTheDay;
