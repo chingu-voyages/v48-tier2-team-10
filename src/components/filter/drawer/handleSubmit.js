@@ -94,8 +94,8 @@ export const handleSubmit = (
   // removes duplicates
   setFilteredData((prev) => [...new Set(prev)]);
 
-  setTimeout(() => {
-    setIsFilterDrawerOpen(false);
-    setForm(initialFormState);
-  }, 1000);
+  setIsFilterDrawerOpen(false);
+
+  // set intial form state?
+  // setForm(initialFormState);
 };

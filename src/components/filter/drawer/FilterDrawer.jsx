@@ -44,13 +44,14 @@ export default function FilterDrawer({
   // function to close drawer
   const handleClose = () => {
     setIsFilterDrawerOpen(false);
-    setForm(initialFormState);
+    // rest to initial form state?
+    // setForm(initialFormState);
   };
 
   // function for reset button
   const handleReset = () => {
     // reset filtered data?
-    // setFilteredData([]);
+    setFilteredData([]);
     setForm(initialFormState);
   };
 
