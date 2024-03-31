@@ -12,8 +12,8 @@ export default function Landing() {
   const { dinoData, loading, error } = useContext(DinoDataContext);
 
   const {
-    isLinksModalOpen,
-    setIsLinksModalOpen,
+    isLinksDrawerOpen,
+    setIsLinksDrawerOpen,
     country,
     setCountry,
     toggleModal,
@@ -37,8 +37,8 @@ export default function Landing() {
 
       <LinksDrawer
         toggleModal={toggleModal}
-        isLinksModalOpen={isLinksModalOpen}
-        setIsLinksModalOpen={setIsLinksModalOpen}
+        isLinksDrawerOpen={isLinksDrawerOpen}
+        setIsLinksDrawerOpen={setIsLinksDrawerOpen}
         country={country}
       />
     </div>
