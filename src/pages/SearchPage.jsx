@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { DinoDataContext } from "../context/DinoDataContext";
 import FilterDrawer from "../components/filter/drawer/FilterDrawer";
 import styles from "./SearchPage.module.css";
@@ -78,9 +78,11 @@ const searchResults = [
 
 export default function SearchPage() {
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
+
   const { dinoData } = useContext(DinoDataContext);
 
   console.log(dinoData);
+
   return (
     <>
       <h3>Search Page</h3>
@@ -91,7 +93,6 @@ export default function SearchPage() {
         setIsFilterDrawerOpen={setIsFilterDrawerOpen}
       />
 
-      {/* filter button */}
       <button
         className={styles.filterBtn}
         onClick={() => setIsFilterDrawerOpen(true)}

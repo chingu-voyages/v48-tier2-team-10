@@ -1,16 +1,16 @@
-// this function generates the accordians ie title and checkboxes
+// this function generates the accordions ie title and checkboxes
 
 export default function useAccordianData(searchResults) {
   const getDietCheckboxes = () => {
     let arr = [];
-    searchResults?.some((item) => {
-      if (item.diet === "carnivorous") {
+    searchResults?.some((dino) => {
+      if (dino.diet === "carnivorous") {
         arr = [...arr, "carnivorous"];
       }
-      if (item.diet === "herbivorous") {
+      if (dino.diet === "herbivorous") {
         arr = [...arr, "herbivorous"];
       }
-      if (item.diet === "omnivorous") {
+      if (dino.diet === "omnivorous") {
         arr = [...arr, "omnivorous"];
       }
     });
@@ -19,31 +19,30 @@ export default function useAccordianData(searchResults) {
 
   const getCountryCheckboxes = () => {
     let arr = [];
-    searchResults?.forEach((item) => {
-      let country = item.foundIn.split(",");
+    searchResults?.forEach((dino) => {
+      let country = dino.foundIn.split(",");
       if (country.length > 1) {
-        const removeWhiteSpace = country.map((item) => item.trim());
+        const removeWhiteSpace = country.map((dino) => dino.trim());
         country = removeWhiteSpace;
       }
       arr = [...arr, country].flat().sort();
     });
-    // console.log([...new Set(arr)]);
     return [...new Set(arr)];
   };
 
   const getWeightCheckboxes = () => {
     let arr = [];
-    searchResults?.some((item) => {
-      if (item.weight < 100) {
+    searchResults?.some((dino) => {
+      if (dino.weight < 100) {
         arr = [...arr, "ABelow 100kg"];
       }
-      if (item.weight > 100 && item.weight < 1000) {
+      if (dino.weight > 100 && dino.weight < 1000) {
         arr = [...arr, "B100kg-1000kg"];
       }
-      if (item.weight > 1000) {
+      if (dino.weight > 1000) {
         arr = [...arr, "CHigher than 1000kg"];
       }
-      if (item.weight === "N/A") {
+      if (dino.weight === "N/A") {
         arr = [...arr, "DN/A"];
       }
     });
@@ -52,17 +51,17 @@ export default function useAccordianData(searchResults) {
 
   const getLengthCheckboxes = () => {
     let arr = [];
-    searchResults?.some((item) => {
-      if (item.length < 1) {
+    searchResults?.some((dino) => {
+      if (dino.length < 1) {
         arr = [...arr, "ABelow 1m"];
       }
-      if (item.length > 1 && item.length < 10) {
+      if (dino.length > 1 && dino.length < 10) {
         arr = [...arr, "B1m-10m"];
       }
-      if (item.length > 10) {
+      if (dino.length > 10) {
         arr = [...arr, "CHigher than 10m"];
       }
-      if (item.length === "N/A") {
+      if (dino.length === "N/A") {
         arr = [...arr, "DN/A"];
       }
     });
@@ -71,19 +70,19 @@ export default function useAccordianData(searchResults) {
 
   const accordionData = [
     {
-      title: "diet",
+      title: "Diet",
       checkboxes: getDietCheckboxes(),
     },
     {
-      title: "country",
+      title: "Country",
       checkboxes: getCountryCheckboxes(),
     },
     {
-      title: "weight",
+      title: "Weight",
       checkboxes: getWeightCheckboxes(),
     },
     {
-      title: "length",
+      title: "Length",
       checkboxes: getLengthCheckboxes(),
     },
   ];

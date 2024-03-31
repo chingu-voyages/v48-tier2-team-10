@@ -2,9 +2,9 @@ import { useState } from "react";
 import Accordion from "../accordion/Accordion";
 import useAccordianData from "./useAccordianData";
 import useFormState from "./useFormState";
-import getHandleSubmit from "./getHandleSubmit";
 import styles from "./FilterDrawer.module.css";
 import closeIcon from "../../../assets/close.png";
+import { handleSubmit } from "./handleSubmit";
 
 // https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/
 
@@ -13,58 +13,36 @@ export default function FilterDrawer({
   isFilterDrawerOpen,
   setIsFilterDrawerOpen,
 }) {
-  // const [isOpen, setIsOpen] = useState(false);
   const [filteredData, setFilteredData] = useState([]);
 
   // generate initial form state
-  const initialFormState = useFormState();
+  const initialFormState = useFormState(searchResults);
 
   const [form, setForm] = useState(initialFormState);
-  // console.log(initialFormState);
 
-  // gets accordian data
-  const {
-    getCountryCheckboxes,
-    // getDietCheckboxes,
-    // getLengthCheckboxes,
-    // getWeightCheckboxes,
-    accordionData,
-  } = useAccordianData(searchResults);
-  // console.log(accordionData);
+  // gets accordion data
+  const { getCountryCheckboxes, accordionData } =
+    useAccordianData(searchResults);
 
-  // function that fires when form is submitted
-  const handleSubmit = getHandleSubmit(
-    form,
-    searchResults,
-    setFilteredData,
-    getCountryCheckboxes,
-    setIsFilterDrawerOpen,
-    setForm,
-    initialFormState
-  );
-
-  // const toggleMenu = () => {
-  //   setIsOpen(!isOpen);
-  // };
-
-  console.log(filteredData);
-
-  const handleReset = () => {
-    setFilteredData([]);
-    setForm(initialFormState);
-  };
-
-  const handleClose = () => {
-    setIsFilterDrawerOpen(false);
-    // handleReset();
-    // setForm(initialFormState);
-  };
-
+  // function to close drawer when user clicks on overlay
   const handleCloseOverlay = (e) => {
     if (e.target.id === "overlay") {
       setIsFilterDrawerOpen(false);
     }
   };
+
+  // function to close drawer
+  const handleClose = () => {
+    setIsFilterDrawerOpen(false);
+  };
+
+  // function for reset button
+  const handleReset = () => {
+    setFilteredData([]);
+    setForm(initialFormState);
+  };
+
+  console.log(filteredData);
 
   return (
     <div
@@ -73,8 +51,8 @@ export default function FilterDrawer({
       id="overlay"
     >
       <div
-        className={`${styles.sideNav} ${
-          isFilterDrawerOpen ? styles.sideNavActive : ""
+        className={`${styles.drawer} ${
+          isFilterDrawerOpen ? styles.drawerActive : ""
         }`}
       >
         <div className={styles.header}>
@@ -84,23 +62,43 @@ export default function FilterDrawer({
             <img src={closeIcon} alt="" />
           </button>
         </div>
-        {/* <hr /> */}
-        <form onSubmit={handleSubmit} className={styles.filterForm}>
-          {/* accordian  container*/}
+
+        <form
+          onSubmit={(e) =>
+            handleSubmit(
+              e,
+              form,
+              searchResults,
+              setFilteredData,
+              getCountryCheckboxes,
+              setIsFilterDrawerOpen
+            )
+          }
+          className={styles.filterForm}
+        >
           <div className={styles.accordionContainer}>
             {accordionData.map(({ title, checkboxes }) => (
               <Accordion
                 key={title}
                 title={title}
-                setFilteredData={setFilteredData}
                 form={form}
                 setForm={setForm}
                 checkboxes={checkboxes}
               />
             ))}
           </div>
-          <button type="submit">submit</button>
-          <button onClick={handleReset}>reset</button>
+          <div className={styles.buttonContainer}>
+            <button
+              type="button"
+              onClick={handleReset}
+              className={styles.resetBtn}
+            >
+              Reset
+            </button>
+            <button type="submit" className={styles.submitBtn}>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 0.5px solid #836645;
-  padding: 20px 20px 10px;
+  padding: 20px 20px 16px;
 }
 
 .heading {
@@ -25,9 +25,13 @@
 
 .filterForm {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-.sideNav {
+.drawer {
   position: fixed;
   z-index: 999;
   top: 0;
@@ -35,45 +39,53 @@
   height: 100%;
   /* figma width */
   /* width: 375px; */
-  width: 15rem;
-  /* padding: 30px 20px; */
+  width: 17rem;
   background-color: #fefaf4;
   transition: 2s;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-/* This makes the side menu visible */
-.sideNavActive {
+.drawerActive {
   right: 0;
   transition: 0.5s;
 }
 
-.flexCol {
+.buttonContainer {
+  margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
 
-/* width */
-.sideNav::-webkit-scrollbar {
-  width: 5px;
+.resetBtn {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  color: #0b0b0b;
 }
 
-/* Track */
-.sideNav::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0px grey;
-  border-radius: 5px;
+.submitBtn {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  color: #fff;
+  padding: 12px 24px;
+  background-color: #836645;
+  border-radius: 50px;
 }
 
-/* Handle */
-.sideNav::-webkit-scrollbar-thumb {
-  background: #836645;
-  border-radius: 5px;
-}
-
-/* Handle on hover */
-.sideNav::-webkit-scrollbar-thumb:hover {
-  background: #836645;
-}
+/* .submitBtn:hover {
+  background-color: ;
+} */
 
 .accordionContainer {
   display: flex;
@@ -82,14 +94,36 @@
 }
 
 .overlay {
-  position: fixed; /* Sit on top of the page content */
-
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* custom scroll */
+/* width */
+.drawer::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.drawer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+.drawer::-webkit-scrollbar-thumb {
+  background: #836645;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.drawer::-webkit-scrollbar-thumb:hover {
+  background: #836645;
 }

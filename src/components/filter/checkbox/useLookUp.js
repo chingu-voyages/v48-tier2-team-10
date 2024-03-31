@@ -1,13 +1,10 @@
-import React from "react";
-
 export default function useLookUp(checkboxes) {
   const getCountriesLookUp = () => {
-    let x = {};
-    checkboxes.forEach((item) => {
-      x = { ...x, [item]: item };
-      // x = { ...x, country: item };
+    let countries = {};
+    checkboxes.forEach((country) => {
+      countries = { ...countries, [country]: country };
     });
-    return x;
+    return countries;
   };
 
   const countriesLookUp = getCountriesLookUp();

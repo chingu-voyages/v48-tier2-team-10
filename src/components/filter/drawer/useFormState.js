@@ -1,14 +1,8 @@
 import useAccordianData from "./useAccordianData";
 
-export default function useFormState() {
-  // get accordian (ie titles and checkboses) data - this is dynamic eg search results may only have herbivorous dinos and not carni and omni, so will only display herbiv in the diet accordian
-  const {
-    getCountryCheckboxes,
-    getDietCheckboxes,
-    getLengthCheckboxes,
-    getWeightCheckboxes,
-    accordionData,
-  } = useAccordianData();
+export default function useFormState(searchResults) {
+  // gets countries from search results
+  const { getCountryCheckboxes } = useAccordianData(searchResults);
 
   // diet, length and weight is hardcoded for the initial form state
   const partInitialFormState = {
@@ -25,13 +19,13 @@ export default function useFormState() {
     NALength: false,
   };
 
-  // the coutnries for the inital form stateis dynamic - depends on the countries from the search results, this is so dont get a huge list of all coutnreis if  not needed
+  // the coutnries for the inital form state is dynamic ie depends on the countries from the search results, this is so dont get a huge list of all countries if  not needed
   const getCountryInitialformState = () => {
-    let x = {};
-    getCountryCheckboxes().forEach((item) => {
-      x = { ...x, [item]: false };
+    let countries = {};
+    getCountryCheckboxes().forEach((country) => {
+      countries = { ...countries, [country]: false };
     });
-    return x;
+    return countries;
   };
 
   // call the above function
@@ -42,6 +36,6 @@ export default function useFormState() {
     ...partInitialFormState,
     ...countryInitialformState,
   };
-  // console.log(initialFormState);
+
   return initialFormState;
 }
