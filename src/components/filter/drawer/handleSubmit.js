@@ -84,7 +84,6 @@ export const handleSubmit = (
   //  if a country checkbox is checked then these if statements will filter that country
   getCountryCheckboxes().forEach((country) => {
     if (form[country]) {
-      console.log(country);
       const filteredResults = searchResults.filter((item) =>
         item.foundIn.includes(country)
       );
