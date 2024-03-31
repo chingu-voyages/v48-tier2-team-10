@@ -32,7 +32,13 @@ export default function Accordion({ title, form, setForm, checkboxes }) {
           )}
         </div>
       </div>
-      {isActive && <div className={styles.accordionContent}>{checkboxEl}</div>}
+      <div
+        className={`${styles.accordionContent} ${
+          isActive ? styles.accordionContentActive : ""
+        }`}
+      >
+        {checkboxEl}
+      </div>
     </div>
   );
 }
