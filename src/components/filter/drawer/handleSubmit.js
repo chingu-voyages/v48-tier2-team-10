@@ -1,6 +1,8 @@
 export const handleSubmit = (
   e,
   form,
+  setForm,
+  initialFormState,
   searchResults,
   setFilteredData,
   getCountryCheckboxes,
@@ -95,6 +97,6 @@ export const handleSubmit = (
 
   setTimeout(() => {
     setIsFilterDrawerOpen(false);
-    // setForm(initialFormState);
+    setForm(initialFormState);
   }, 1000);
 };
