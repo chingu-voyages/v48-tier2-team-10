@@ -63,6 +63,7 @@ export default function Map({ dinoData, toggleModal }) {
         />
         {pinEl}
       </MapContainer>
+      <figure className={styles.credit}>credit to leaflet</figure>
     </div>
   );
 }
