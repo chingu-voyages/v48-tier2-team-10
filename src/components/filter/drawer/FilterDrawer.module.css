@@ -48,12 +48,12 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  transition: 3s;
+  transition: 1.5s;
 }
 
 .drawerActive {
   right: 0;
-  transition: 1s;
+  transition: 1.5s;
 }
 
 .buttonContainer {
