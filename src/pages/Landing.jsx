@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { DinoDataContext } from '../context/DinoDataContext'
-import Hero from '../components/Hero'
+import Hero from '../components/Hero/Hero'
+import Chart from '../components/Chart/Chart'
 
 export default function Landing() {
   const { dinoData, loading, error } = useContext(DinoDataContext)
@@ -14,6 +15,7 @@ export default function Landing() {
   return (
     <div>
       <Hero />
+      <Chart />
     </div>
   )
 }

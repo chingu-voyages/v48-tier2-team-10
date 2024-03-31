@@ -1,4 +1,5 @@
 import { useState, useContext } from "react";
+import SearchBar from "../components/SearchBar/SearchBar";
 import { DinoDataContext } from "../context/DinoDataContext";
 import FilterDrawer from "../components/filter/drawer/FilterDrawer";
 import styles from "./SearchPage.module.css";
@@ -85,7 +86,7 @@ export default function SearchPage() {
 
   return (
     <>
-      <h3>Search Page</h3>
+      <SearchBar />
 
       <FilterDrawer
         searchResults={searchResults}
