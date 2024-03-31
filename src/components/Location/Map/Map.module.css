@@ -7,3 +7,8 @@
 .mapContainer a {
   display: none;
 }
+
+.credit {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+}
