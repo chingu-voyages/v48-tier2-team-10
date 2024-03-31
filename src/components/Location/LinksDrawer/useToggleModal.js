@@ -1,17 +1,17 @@
 import { useState } from "react";
 
 export default function useToggleModal() {
-  const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
+  const [isLinksDrawerOpen, setIsLinksDrawerOpen] = useState(false);
   const [country, setCountry] = useState();
 
   const toggleModal = (dino) => {
     setCountry(dino.position.country);
-    setIsLinksModalOpen(true);
+    setIsLinksDrawerOpen(true);
   };
 
   return {
-    isLinksModalOpen,
-    setIsLinksModalOpen,
+    isLinksDrawerOpen,
+    setIsLinksDrawerOpen,
     country,
     setCountry,
     toggleModal,
