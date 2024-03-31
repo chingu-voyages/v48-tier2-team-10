@@ -1,11 +1,10 @@
-import { Pie } from "@nivo/pie";
-import "./PieChart.Module.css";
-import React from "react";
+import { Pie } from '@nivo/pie'
+import styles from './PieChart.module.css'
 
 const PieChart = ({ data }) => {
   return (
     <>
-      <div className="pieContainer">
+      <div className={styles.pieContainer}>
         <p>Diet Composition</p>
 
         <Pie
@@ -18,45 +17,45 @@ const PieChart = ({ data }) => {
           padAngle={0.1}
           cornerRadius={1}
           activeOuterRadiusOffset={5}
-          colors={{ scheme: "nivo" }}
+          colors={{ scheme: 'nivo' }}
           borderColor={{
-            from: "color",
-            modifiers: [["darker", 0.6]],
+            from: 'color',
+            modifiers: [['darker', 0.6]]
           }}
           theme={{
             labels: {
               text: {
-                fontSize: 13,
-              },
-            },
+                fontSize: 13
+              }
+            }
           }}
           arcLinkLabelsSkipAngle={200}
           arcLinkLabelsTextColor="white"
           arcLinkLabelsThickness={0}
-          arcLinkLabelsColor={{ from: "color" }}
+          arcLinkLabelsColor={{ from: 'color' }}
           arcLabelsSkipAngle={10}
           arcLabelsTextColor="white"
           legends={[
             {
-              anchor: "bottom",
-              direction: "column",
+              anchor: 'bottom',
+              direction: 'column',
               justify: false,
               translateX: 180,
               translateY: -70,
               itemsSpacing: 12,
               itemWidth: 100,
               itemHeight: 20,
-              itemTextColor: "black",
-              itemDirection: "left-to-right",
+              itemTextColor: 'black',
+              itemDirection: 'left-to-right',
               itemOpacity: 1,
               symbolSize: 14,
-              symbolShape: "square",
-            },
+              symbolShape: 'square'
+            }
           ]}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PieChart;
+export default PieChart
