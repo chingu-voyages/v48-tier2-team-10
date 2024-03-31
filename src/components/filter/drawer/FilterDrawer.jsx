@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Accordion from "../accordion/Accordion";
 import useAccordianData from "./useAccordianData";
 import useFormState from "./useFormState";
@@ -24,6 +24,16 @@ export default function FilterDrawer({
   const { getCountryCheckboxes, accordionData } =
     useAccordianData(searchResults);
 
+  // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
+  useEffect(() => {
+    if (isFilterDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "scroll";
+    };
+  }, [isFilterDrawerOpen]);
+
   // function to close drawer when user clicks on overlay
   const handleCloseOverlay = (e) => {
     if (e.target.id === "overlay") {
@@ -34,11 +44,13 @@ export default function FilterDrawer({
   // function to close drawer
   const handleClose = () => {
     setIsFilterDrawerOpen(false);
+    setForm(initialFormState);
   };
 
   // function for reset button
   const handleReset = () => {
-    setFilteredData([]);
+    // reset filtered data?
+    // setFilteredData([]);
     setForm(initialFormState);
   };
 
@@ -68,6 +80,8 @@ export default function FilterDrawer({
             handleSubmit(
               e,
               form,
+              setForm,
+              initialFormState,
               searchResults,
               setFilteredData,
               getCountryCheckboxes,
@@ -96,7 +110,7 @@ export default function FilterDrawer({
               Reset
             </button>
             <button type="submit" className={styles.submitBtn}>
-              Submit
+              Apply
             </button>
           </div>
         </form>
