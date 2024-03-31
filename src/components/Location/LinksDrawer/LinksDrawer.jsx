@@ -1,14 +1,14 @@
 import styles from "./LinksDrawer.module.css";
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import { DinoDataContext } from "../../../context/DinoDataContext";
 import DinoLink from "./DinoLink";
 
 /* https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/ */
 
 export default function LinksDrawer({
-  isLinksModalOpen,
+  isLinksDrawerOpen,
+  setIsLinksDrawerOpen,
   country,
-  setIsLinksModalOpen,
 }) {
   const { dinoData, loading, error } = useContext(DinoDataContext);
 
@@ -18,16 +18,36 @@ export default function LinksDrawer({
 
   const linkEl = links.map((link) => <DinoLink key={link.name} dino={link} />);
 
+  const handleCloseOverlay = (e) => {
+    if (e.target.id === "overlay") {
+      setIsLinksDrawerOpen(false);
+    }
+  };
+
+  // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
+  useEffect(() => {
+    if (isLinksDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "scroll";
+    };
+  }, [isLinksDrawerOpen]);
+
   return (
-    <>
+    <div
+      className={` ${isLinksDrawerOpen ? styles.overlay : ""}`}
+      onClick={handleCloseOverlay}
+      id="overlay"
+    >
       <div
         className={`${styles.sideNav} ${
-          isLinksModalOpen ? styles.sideNavActive : ""
+          isLinksDrawerOpen ? styles.sideNavActive : ""
         }`}
       >
         <button
           className={styles.closeButton}
-          onClick={() => setIsLinksModalOpen(false)}
+          onClick={() => setIsLinksDrawerOpen(false)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -49,6 +69,6 @@ export default function LinksDrawer({
         <h3>Dinosaurs in {country}</h3>
         <ul>{linkEl}</ul>
       </div>
-    </>
+    </div>
   );
 }
