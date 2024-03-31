@@ -1227,6 +1227,11 @@ export const countries = [
     latitude: 52,
     longitude: -1,
   },
+  {
+    country: "North Africa",
+    latitude: 30,
+    longitude: -11,
+  },
 ];
 // https://github.com/eesur/country-codes-lat-long/blob/master/country-codes-lat-long-alpha3.json
 
