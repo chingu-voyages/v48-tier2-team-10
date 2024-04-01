@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { DinoDataContext } from "../context/DinoDataContext";
-import Hero from "../components/Hero/Hero'
-import Chart from '../components/Chart/Chart";
+import Hero from "../components/Hero/Hero";
+import Chart from "../components/Chart/Chart";
 import Location from "../components/Location/Location";
 import LinksDrawer from "../components/Location/LinksDrawer/LinksDrawer";
-import Chart from "./Chart";
 import styles from "./Landing.module.css";
 import { getCountries } from "../components/Location/getCountries";
 import useToggleModal from "../components/Location/LinksDrawer/useToggleModal";
@@ -42,7 +41,6 @@ export default function Landing() {
         setIsLinksDrawerOpen={setIsLinksDrawerOpen}
         country={country}
       />
-      <Chart />
     </div>
   );
 }
