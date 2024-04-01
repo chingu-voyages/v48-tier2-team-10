@@ -40,7 +40,7 @@
 
 .title p {
   color: #836645;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 32px;
   margin-top: 45px;
   /* display:flex;
@@ -48,11 +48,12 @@
 }
 
 .title {
-  margin-left: 530px;
-  margin-bottom: 50px;
+  /* margin-left: 530px;
+  margin-bottom: 50px; */
 
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .title img {
@@ -70,10 +71,6 @@
     margin-bottom: 50px;
   }
 
-  .title p {
-    font-size: 20px;
-    font-weight: bold;
-  }
   .container {
     background-color: #f3ebde;
     height: auto;

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { DinoDataContext } from "../context/DinoDataContext";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero/Hero'
+import Chart from '../components/Chart/Chart";
 import Location from "../components/Location/Location";
 import LinksDrawer from "../components/Location/LinksDrawer/LinksDrawer";
 import Chart from "./Chart";
@@ -41,6 +42,7 @@ export default function Landing() {
         setIsLinksDrawerOpen={setIsLinksDrawerOpen}
         country={country}
       />
+      <Chart />
     </div>
   );
 }
