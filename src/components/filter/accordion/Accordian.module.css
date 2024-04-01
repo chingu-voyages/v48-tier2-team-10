@@ -1,0 +1,24 @@
+.accordionTitle {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #39393c;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.accordionContent {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.accordionContentActive {
+  max-height: 100%;
+}
+
+/* https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/ */
