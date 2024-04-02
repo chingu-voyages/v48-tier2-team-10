@@ -1,0 +1,36 @@
+.wrapper {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.wrapper p {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #39393c;
+}
+
+.wrapper select {
+  border: 2px solid #836645;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 16px;
+  color: #39393c;
+  outline: none;
+}
+
+/* .wrapper select:focus {
+  border: 2px solid pink;
+} */
+
+.wrapper option {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #39393c;
+}

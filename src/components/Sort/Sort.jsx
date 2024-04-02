@@ -1,14 +1,23 @@
-const Sort = () => {
+import { useState } from 'react'
+import styles from './Sort.module.css'
+
+const Sort = ({ handleSelect }) => {
+  const [selectedOption, setSelectedOption] = useState(null)
+  const handler = (e) => {
+    setSelectedOption(e.target.value)
+    handleSelect(selectedOption)
+  }
   return (
-    <div>
-      <select>
+    <div className={styles.wrapper}>
+      <p>Sort by:</p>
+      <select onChange={handler}>
         <option value="">Select</option>
-        <option value="0">Name A-Z</option>
-        <option value="1">Name Z-A</option>
-        <option value="2">Weight: Hight to Low</option>
-        <option value="3">Weight: Low to Hight</option>
-        <option value="4">Length: Hight to Low</option>
-        <option value="5">Length: Low to Hight</option>
+        <option value="nameAZ">Name A-Z</option>
+        <option value="nameZA">Name Z-A</option>
+        <option value="weightHighLow">Weight: High to Low</option>
+        <option value="weightLowHigh">Weight: Low to High</option>
+        <option value="lengthHighLow">Length: High to Low</option>
+        <option value="lengthLowHigh">Length: Low to High</option>
       </select>
     </div>
   )
