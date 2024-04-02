@@ -12,14 +12,14 @@ export default function FilterDrawer({
   searchResults,
   isFilterDrawerOpen,
   setIsFilterDrawerOpen,
+  filteredData,
+  setFilteredData,
+  setItemOffset,
 }) {
-  const [filteredData, setFilteredData] = useState([]);
-
   // generate initial form state
   const initialFormState = useFormState(searchResults);
 
   const [form, setForm] = useState(initialFormState);
-
   // gets accordion data
   const { getCountryCheckboxes, accordionData } =
     useAccordianData(searchResults);
@@ -51,7 +51,7 @@ export default function FilterDrawer({
   // function for reset button
   const handleReset = () => {
     // reset filtered data?
-    setFilteredData([]);
+    setFilteredData(searchResults);
     setForm(initialFormState);
   };
 
@@ -86,7 +86,8 @@ export default function FilterDrawer({
               searchResults,
               setFilteredData,
               getCountryCheckboxes,
-              setIsFilterDrawerOpen
+              setIsFilterDrawerOpen,
+              setItemOffset
             )
           }
           className={styles.filterForm}

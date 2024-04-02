@@ -6,7 +6,8 @@ export const handleSubmit = (
   searchResults,
   setFilteredData,
   getCountryCheckboxes,
-  setIsFilterDrawerOpen
+  setIsFilterDrawerOpen,
+  setItemOffset
 ) => {
   e.preventDefault();
 
@@ -93,6 +94,8 @@ export const handleSubmit = (
 
   // removes duplicates
   setFilteredData((prev) => [...new Set(prev)]);
+
+  setItemOffset(0);
 
   setIsFilterDrawerOpen(false);
 
