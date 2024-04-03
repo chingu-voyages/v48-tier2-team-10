@@ -69,7 +69,7 @@ export default function LinksDrawer({
 
         <div className={styles.linkCardContainer}>{linkCardEl}</div>
 
-        {links.length > 6 && (
+        {links.length > 8 && (
           <div className={styles.paginationContainer}>
             <Pagination
               pageCount={pageCount}
