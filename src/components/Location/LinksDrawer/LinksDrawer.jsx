@@ -1,7 +1,10 @@
 import styles from "./LinksDrawer.module.css";
 import { useEffect, useContext } from "react";
 import { DinoDataContext } from "../../../context/DinoDataContext";
-import DinoLink from "./DinoLink";
+import LinkCard from "./LinkCard";
+import usePagination from "../../Pagination/usePagination";
+import Pagination from "../../Pagination/Pagination";
+import closeIcon from "../../../assets/close.png";
 
 /* https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/ */
 
@@ -16,12 +19,23 @@ export default function LinksDrawer({
     (dino) => dino.foundIn === country || dino.foundIn.includes(country)
   );
 
-  const linkEl = links.map((link) => <DinoLink key={link.name} dino={link} />);
+  const { currentItems, pageCount, handlePageClick, setItemOffset } =
+    usePagination(8, links);
+
+  const linkCardEl =
+    currentItems &&
+    currentItems.map((dino, index) => <LinkCard key={index} dino={dino} />);
 
   const handleCloseOverlay = (e) => {
     if (e.target.id === "overlay") {
       setIsLinksDrawerOpen(false);
+      setItemOffset(0);
     }
+  };
+
+  const closeDrawer = () => {
+    setIsLinksDrawerOpen(false);
+    setItemOffset(0);
   };
 
   // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
@@ -45,29 +59,24 @@ export default function LinksDrawer({
           isLinksDrawerOpen ? styles.sideNavActive : ""
         }`}
       >
-        <button
-          className={styles.closeButton}
-          onClick={() => setIsLinksDrawerOpen(false)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-x"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M18 6l-12 12" />
-            <path d="M6 6l12 12" />
-          </svg>
-        </button>
-        <h3>Dinosaurs in {country}</h3>
-        <ul>{linkEl}</ul>
+        <div className={styles.header}>
+          <button className={styles.closeButton} onClick={closeDrawer}>
+            <img src={closeIcon} alt="" />
+          </button>
+        </div>
+
+        <h3 className={styles.heading}>Dinosaurs in {country}</h3>
+
+        <div className={styles.linkCardContainer}>{linkCardEl}</div>
+
+        {links.length > 6 && (
+          <div className={styles.paginationContainer}>
+            <Pagination
+              pageCount={pageCount}
+              handlePageClick={handlePageClick}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
