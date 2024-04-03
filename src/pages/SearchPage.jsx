@@ -34,6 +34,8 @@ export default function SearchPage() {
         setItemOffset={setItemOffset}
       />
 
+      <p className={styles.total}>Total {filteredData.length} Dinosaurs</p>
+
       <button
         className={styles.filterBtn}
         onClick={() => setIsFilterDrawerOpen(true)}
@@ -41,10 +43,7 @@ export default function SearchPage() {
         Filter
       </button>
 
-      <DisplaySearchResults
-        filteredData={filteredData}
-        currentItems={currentItems}
-      />
+      <DisplaySearchResults currentItems={currentItems} />
 
       <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
 
