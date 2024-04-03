@@ -9,16 +9,16 @@ export default function usePagination(itemsPerPage, searchResults) {
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = searchResults?.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(searchResults?.length / itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % searchResults?.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
+    // console.log(
+    //   `User requested page number ${event.selected}, which is offset ${newOffset}`
+    // );
     setItemOffset(newOffset);
   };
 
