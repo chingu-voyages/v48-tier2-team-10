@@ -1,0 +1,44 @@
+/* container */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pageItem {
+  list-style-type: none;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #212b36;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #dfe3e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageLink {
+  cursor: pointer;
+}
+
+.active {
+  color: #836645;
+  border: 1px solid #836645;
+}
+
+.next,
+.prev {
+  color: #c4cdd5;
+}
+
+.disabled {
+  background-color: #c4cdd5;
+  color: white;
+  cursor: not-allowed;
+  fill: fff;
+}
