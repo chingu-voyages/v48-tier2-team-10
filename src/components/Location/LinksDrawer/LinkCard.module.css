@@ -1,0 +1,48 @@
+.link {
+  text-decoration: none;
+}
+
+.cardContainer {
+  width: 145px;
+  height: 162px;
+  border-radius: 8px;
+  background-color: #fefaf4;
+  border: 1px solid #836645;
+  text-decoration: none;
+}
+
+.imageContainer {
+  width: 145px;
+  height: 122px;
+  border-bottom: 1px solid #836645;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.dinoImg {
+  object-fit: scale-down;
+  height: 100px;
+}
+
+.nameContainer {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #39393c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.name {
+  white-space: nowrap;
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
