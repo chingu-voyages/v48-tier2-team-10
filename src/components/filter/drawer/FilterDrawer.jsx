@@ -11,13 +11,13 @@ import { handleSubmit } from "./handleSubmit";
 export default function FilterDrawer({
   searchResults,
   isFilterDrawerOpen,
-  setIsFilterDrawerOpen
+  setIsFilterDrawerOpen,
   filteredData,
   setFilteredData,
   setItemOffset,
 }) {
   // generate initial form state
-  const initialFormState = useFormState(searchResults)
+  const initialFormState = useFormState(searchResults);
 
   const [form, setForm] = useState(initialFormState);
   // gets accordion data
