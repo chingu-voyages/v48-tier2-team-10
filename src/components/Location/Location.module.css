@@ -1,7 +1,7 @@
 .container {
   height: 100%;
   width: 100%;
-  background-color: #f3ebde;
+  /* background-color: #f3ebde; */
   margin-bottom: 40px;
 }
 
@@ -29,9 +29,11 @@
 
 .title {
   font-size: 32px;
-  /* line-height: 44.8; */
   color: #836645;
-  /* font-family: "Patua One", serif; */
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  line-height: 44.8px;
+  text-align: center;
 }
 
 .notFound {
