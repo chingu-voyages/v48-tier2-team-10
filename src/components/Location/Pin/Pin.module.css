@@ -1,0 +1,28 @@
+.popup {
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #a18a70;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.image {
+  height: 70px;
+  border-radius: 10px;
+}
+
+.textSmall {
+  font-size: small;
+}
+
+.textLarge {
+  font-size: larger;
+}

@@ -1,0 +1,93 @@
+/* https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/ */
+
+.header {
+  padding: 20px 20px 0px;
+  display: flex;
+}
+
+.heading {
+  text-align: center;
+  font-family: "Patua One";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 39.2px;
+  color: #836645;
+}
+
+.sideNav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 375px;
+  background-color: #fff;
+  transition: 2s;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* This makes the side menu visible */
+.sideNavActive {
+  right: 0;
+  transition: 0.5s;
+}
+
+.linkCardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
+
+.closeButton {
+  margin-left: auto;
+  justify-self: end;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.paginationContainer {
+  margin-top: auto;
+  padding: 10px 0px 30px;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 400;
+}
+
+/* scroll */
+/* width */
+.sideNav::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.sideNav::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+.sideNav::-webkit-scrollbar-thumb {
+  background: #836645;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.sideNav::-webkit-scrollbar-thumb:hover {
+  background: #836645;
+}
