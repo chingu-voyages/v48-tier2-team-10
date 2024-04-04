@@ -41,24 +41,3 @@
   cursor: not-allowed;
   fill: fff;
 }
-
-.pageLink {
-  cursor: pointer;
-}
-
-.active {
-  color: #836645;
-  border: 1px solid #836645;
-}
-
-.next,
-.prev {
-  color: #c4cdd5;
-}
-
-.disabled {
-  background-color: #c4cdd5;
-  color: white;
-  cursor: not-allowed;
-  fill: fff;
-}
