@@ -52,6 +52,7 @@ export default function Pagination({ handlePageClick, pageCount }) {
         breakLinkClassName={styles.pageLink}
         containerClassName={styles.pagination}
         activeClassName={styles.active}
+        activeLinkClassName={styles.activeLink}
         renderOnZeroPageCount={null}
         disabledClassName={styles.disabled}
         disabledLinkClassName={styles.disabled}
