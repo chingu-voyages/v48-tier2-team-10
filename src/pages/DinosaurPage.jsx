@@ -1,6 +1,7 @@
-import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DinoDataContext } from "../context/DinoDataContext";
+import DinoDetails from "../components/DinoDetails/DinoDetails";
+import { useContext } from "react";
 import Location from "../components/Location/Location";
 
 export default function DinosaurPage() {
@@ -12,8 +13,7 @@ export default function DinosaurPage() {
 
   return (
     <>
-      <div>Dinosaur Page - {dino}</div>
-
+      <DinoDetails />
       <Location dinoData={[thisDino]} />
     </>
   );
