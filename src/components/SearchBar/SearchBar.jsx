@@ -10,10 +10,7 @@ const SearchBar = ({
 }) => {
   const [query, setQuery] = useState();
 
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-  };
-
+  // when no query, shows all dinos - this can be changed
   useEffect(() => {
     if (!query) {
       setSearchResults(dinoData);
@@ -21,15 +18,32 @@ const SearchBar = ({
     }
   }, [query, dinoData, setSearchResults, setFilteredData]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const filterDinoName = (value) => {
     const result = dinoData.filter((dino) =>
-      dino.name.toLowerCase().includes(query.toLowerCase())
+      dino.name.toLowerCase().includes(value.toLowerCase())
     );
-
     setItemOffset(0);
     setSearchResults(result);
     setFilteredData(result);
+  };
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    filterDinoName(e.target.value);
+  };
+
+  // when user clicks on empty search input, shows all dinos - this can be changed
+  const handleClick = (e) => {
+    if (!e.target.value) {
+      setSearchResults(dinoData);
+      setFilteredData(dinoData);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    filterDinoName(query);
+    setQuery([]);
   };
 
   return (
@@ -40,6 +54,7 @@ const SearchBar = ({
           className={styles.searchInput}
           placeholder="Dinosaur Name"
           value={query}
+          onClick={handleClick}
           onChange={handleChange}
         />
         <button type="submit" className={styles.searchBtn}>

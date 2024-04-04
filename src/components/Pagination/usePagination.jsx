@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 export default function usePagination(itemsPerPage, searchResults) {
-  // console.log("usepaginate", searchResults);
-
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);

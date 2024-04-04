@@ -18,11 +18,10 @@ import {
 
 export default function SearchPage() {
   const { dinoData } = useContext(DinoDataContext);
+
   const [searchResults, setSearchResults] = useState();
-  // console.log(searchResults);
 
   const [filteredData, setFilteredData] = useState([]);
-  // console.log(filteredData);
 
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
@@ -65,11 +64,14 @@ export default function SearchPage() {
       "weight",
       sortedData.map((item) => item.weight)
     );
+
     console.log(
       "length",
       sortedData.map((item) => item.length)
     );
+
     setFilteredData(sortedData);
+    setItemOffset(0);
   };
 
   return (
