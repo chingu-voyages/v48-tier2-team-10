@@ -27,7 +27,7 @@ export default function SearchPage() {
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
   const { currentItems, pageCount, handlePageClick, setItemOffset } =
-    usePagination(10, filteredData);
+    usePagination(12, filteredData);
   // the number is how many cards is shown on a page at a time, can be changed
 
   useEffect(() => {
@@ -61,11 +61,19 @@ export default function SearchPage() {
         break;
     }
 
+    console.log(
+      "weight",
+      sortedData.map((item) => item.weight)
+    );
+    console.log(
+      "length",
+      sortedData.map((item) => item.length)
+    );
     setFilteredData(sortedData);
   };
 
   return (
-    <>
+    <div className={styles.searchPageContainer}>
       <SearchBar
         setSearchResults={setSearchResults}
         dinoData={dinoData}
@@ -75,18 +83,22 @@ export default function SearchPage() {
 
       <p className={styles.total}>Total {filteredData?.length} Dinosaurs</p>
 
-      <button
-        className={styles.filterBtn}
-        onClick={() => setIsFilterDrawerOpen(true)}
-      >
-        Filter
-      </button>
+      <div className={styles.filterSortContainer}>
+        <button
+          className={styles.filterBtn}
+          onClick={() => setIsFilterDrawerOpen(true)}
+        >
+          Filter
+        </button>
 
-      <Sort handleSelect={handleSelect} />
+        <Sort handleSelect={handleSelect} />
+      </div>
 
       <DisplaySearchResults currentItems={currentItems} />
 
-      <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+      <div className={styles.paginationContainer}>
+        <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
+      </div>
 
       <FilterDrawer
         searchResults={searchResults}
@@ -96,6 +108,6 @@ export default function SearchPage() {
         setFilteredData={setFilteredData}
         setItemOffset={setItemOffset}
       />
-    </>
+    </div>
   );
 }
