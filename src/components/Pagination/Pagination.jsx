@@ -1,6 +1,5 @@
 import ReactPaginate from "react-paginate";
 import styles from "./Pagination.module.css";
-import carat from "../../assets/carat.svg";
 
 export default function Pagination({ handlePageClick, pageCount }) {
   const prev = (
@@ -38,7 +37,7 @@ export default function Pagination({ handlePageClick, pageCount }) {
       <ReactPaginate
         nextLabel={next}
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={1}
         marginPagesDisplayed={2}
         pageCount={pageCount}
         previousLabel={prev}

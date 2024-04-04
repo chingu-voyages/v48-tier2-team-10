@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+  width: 100%;
+  /* background-color: #f3ebde; */
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets */
+  .container {
+    padding-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .container {
+    padding-top: 7rem;
+  }
+}
+
+.heading {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.title {
+  font-size: 32px;
+  color: #836645;
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  line-height: 44.8px;
+  text-align: center;
+}
+
+.notFound {
+  color: #836645;
+  text-align: center;
+}
