@@ -1,14 +1,9 @@
-import { useState } from "react";
-import styles from "./Sort.module.css";
+import styles from './Sort.module.css'
 
 const Sort = ({ handleSelect }) => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
   const handler = (e) => {
-    setSelectedOption(e.target.value);
-    // handleSelect(selectedOption); - not sure why it wasnt working like this
-    handleSelect(e.target.value);
-  };
+    handleSelect(e.target.value)
+  }
   return (
     <div className={styles.wrapper}>
       <p>Sort by:</p>
@@ -22,7 +17,7 @@ const Sort = ({ handleSelect }) => {
         <option value="lengthLowHigh">Length: Low to High</option>
       </select>
     </div>
-  );
-};
+  )
+}
 
-export default Sort;
+export default Sort

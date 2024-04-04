@@ -1,7 +1,11 @@
-import ReactPaginate from "react-paginate";
-import styles from "./Pagination.module.css";
+import ReactPaginate from 'react-paginate'
+import styles from './Pagination.module.css'
 
-export default function Pagination({ handlePageClick, pageCount }) {
+export default function Pagination({
+  handlePageClick,
+  pageCount,
+  remountComponent
+}) {
   const prev = (
     <svg
       width="24"
@@ -15,7 +19,7 @@ export default function Pagination({ handlePageClick, pageCount }) {
         fill="currentColor"
       />
     </svg>
-  );
+  )
   const next = (
     <svg
       width="24"
@@ -30,10 +34,10 @@ export default function Pagination({ handlePageClick, pageCount }) {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 
   return (
-    <>
+    <div key={remountComponent}>
       <ReactPaginate
         nextLabel={next}
         onPageChange={handlePageClick}
@@ -57,6 +61,6 @@ export default function Pagination({ handlePageClick, pageCount }) {
         disabledClassName={styles.disabled}
         disabledLinkClassName={styles.disabled}
       />
-    </>
-  );
+    </div>
+  )
 }
