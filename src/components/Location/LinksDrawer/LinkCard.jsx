@@ -8,7 +8,7 @@ export default function LinkCard({ dino }) {
       <Link to={`/dinosaurs/${dino.name}`} className={styles.link}>
         <div className={styles.imageContainer}>
           {dino.imageSrc === "N/A" ? (
-            <img src={noImage} alt="no dino image" />
+            <img src={noImage} alt="no dino image" className={styles.dinoImg} />
           ) : (
             <img
               src={dino.imageSrc}
