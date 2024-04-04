@@ -25,45 +25,44 @@ export default function SearchPage() {
   // console.log(filteredData);
 
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
-  const [displayData, setDisplayData] = useState([]);
 
   const { currentItems, pageCount, handlePageClick, setItemOffset } =
     usePagination(10, filteredData);
-
-  const testData = dinoData;
-  const handleSelect = (selectedOption) => {
-    let sortedData;
-    switch (selectedOption) {
-      case "nameAZ":
-        sortedData = sortByNameAZ(testData);
-        break;
-      case "nameZA":
-        sortedData = sortByNameZA(testData);
-        break;
-      case "weightHighLow":
-        sortedData = sortByWeightHighLow(testData);
-        break;
-      case "weightLowHigh":
-        sortedData = sortByWeightLowHigh(testData);
-        break;
-      case "lengthHighLow":
-        sortedData = sortByLengthHighLow(testData);
-        break;
-      case "lengthLowHigh":
-        sortedData = sortByLengthLowHigh(testData);
-        break;
-      default:
-        break;
-    }
-
-    //update display data state
-    setDisplayData(sortedData);
-  };
+  // the number is how many cards is shown on a page at a time, can be changed
 
   useEffect(() => {
     setSearchResults(dinoData);
     setFilteredData(dinoData);
   }, [dinoData]);
+
+  const handleSelect = (selectedOption) => {
+    let sortedData;
+    const dupFilteredData = [...filteredData];
+    switch (selectedOption) {
+      case "nameAZ":
+        sortedData = sortByNameAZ(dupFilteredData);
+        break;
+      case "nameZA":
+        sortedData = sortByNameZA(dupFilteredData);
+        break;
+      case "weightHighLow":
+        sortedData = sortByWeightHighLow(dupFilteredData);
+        break;
+      case "weightLowHigh":
+        sortedData = sortByWeightLowHigh(dupFilteredData);
+        break;
+      case "lengthHighLow":
+        sortedData = sortByLengthHighLow(dupFilteredData);
+        break;
+      case "lengthLowHigh":
+        sortedData = sortByLengthLowHigh(dupFilteredData);
+        break;
+      default:
+        break;
+    }
+
+    setFilteredData(sortedData);
+  };
 
   return (
     <>
@@ -74,7 +73,7 @@ export default function SearchPage() {
         setItemOffset={setItemOffset}
       />
 
-      <p className={styles.total}>Total {filteredData.length} Dinosaurs</p>
+      <p className={styles.total}>Total {filteredData?.length} Dinosaurs</p>
 
       <button
         className={styles.filterBtn}
