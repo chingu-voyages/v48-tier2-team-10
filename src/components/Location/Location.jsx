@@ -9,7 +9,6 @@ import { DinoDataContext } from "../../context/DinoDataContext";
 export default function Location({ dinoData, toggleModal }) {
   const location = useLocation();
   const { loading, error } = useContext(DinoDataContext);
-  console.log(loading);
 
   return (
     <div className={styles.container}>
