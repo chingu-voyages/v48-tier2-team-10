@@ -16,6 +16,7 @@ export function DinoDataContextProvider({ children }) {
         const { data } = await axios.get(
           "https://chinguapi.onrender.com/dinosaurs"
         );
+        // throw new Error("error");
         setDinoData(data);
       } catch (error) {
         console.error(error);
