@@ -38,6 +38,7 @@ export default function Pagination({
       />
     </svg>
   );
+
   const scrollUp = (e) => {
     if (location.pathname === "/search") {
       window.scrollTo({ top: 0, behavior: "smooth" });
