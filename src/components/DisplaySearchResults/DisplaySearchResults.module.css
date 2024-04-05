@@ -27,6 +27,9 @@
 }
 
 .cardContainer {
-  border: 1px solid brown;
+  border: 1px solid #836645;
   list-style-type: none;
+  width: 296px;
+  height: 334px;
+  border-radius: 8px;
 }

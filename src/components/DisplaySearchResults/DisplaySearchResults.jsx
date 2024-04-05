@@ -1,4 +1,5 @@
 import styles from "./DisplaySearchResults.module.css";
+import { Link } from "react-router-dom";
 
 export default function DisplaySearchResults({ currentItems }) {
   return (
@@ -6,13 +7,17 @@ export default function DisplaySearchResults({ currentItems }) {
       {currentItems &&
         currentItems.map((dino, index) => (
           // to be changed to a dino card
-          <li key={index} className={styles.cardContainer}>
+          <Link
+            to={`/dinosaurs/${dino.name}`}
+            key={index}
+            className={styles.cardContainer}
+          >
             <div>
               <p>{dino.name}</p>
               <p>weight: {dino.weight}</p>
               <p>length: {dino.length}</p>
             </div>
-          </li>
+          </Link>
         ))}
     </div>
   );
