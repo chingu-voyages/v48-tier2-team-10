@@ -81,7 +81,11 @@ export default function SearchPage() {
         setItemOffset={setItemOffset}
       />
 
-      <p className={styles.total}>Total {filteredData?.length} Dinosaurs</p>
+      {currentItems.length > 0 ? (
+        <p className={styles.total}>Total {filteredData?.length} Dinosaurs</p>
+      ) : (
+        <p className={styles.skeletonTotal}></p>
+      )}
 
       <div className={styles.filterSortContainer}>
         <button

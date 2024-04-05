@@ -41,3 +41,19 @@
   height: 334px;
   border-radius: 8px;
 }
+
+.skeletonCard {
+  width: 296px;
+  height: 334px;
+  border-radius: 8px;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
