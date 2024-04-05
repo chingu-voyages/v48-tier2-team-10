@@ -7,7 +7,8 @@ export const handleSubmit = (
   setFilteredData,
   getCountryCheckboxes,
   setIsFilterDrawerOpen,
-  setItemOffset
+  setItemOffset,
+  setRemountComponent
 ) => {
   e.preventDefault();
 
@@ -96,6 +97,7 @@ export const handleSubmit = (
   setFilteredData((prev) => [...new Set(prev)]);
 
   setItemOffset(0);
+  setRemountComponent(Math.random())
 
   setIsFilterDrawerOpen(false);
 

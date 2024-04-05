@@ -15,6 +15,7 @@ export default function FilterDrawer({
   filteredData,
   setFilteredData,
   setItemOffset,
+  setRemountComponent
 }) {
   // generate initial form state
   const initialFormState = useFormState(searchResults);
@@ -87,7 +88,8 @@ export default function FilterDrawer({
               setFilteredData,
               getCountryCheckboxes,
               setIsFilterDrawerOpen,
-              setItemOffset
+              setItemOffset,
+              setRemountComponent
             )
           }
           className={styles.filterForm}
