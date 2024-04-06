@@ -57,3 +57,8 @@
     background-color: hsl(200, 20%, 95%);
   }
 }
+
+.notFound {
+  color: #836645;
+  text-align: center;
+}
