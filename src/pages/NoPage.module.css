@@ -1,0 +1,44 @@
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.heading {
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 700;
+  font-family: "Patua One", sans-serif;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 8rem;
+    line-height: 1;
+  }
+}
+
+.button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #39393c;
+  padding: 12px 24px;
+  border: 2px solid #39393c;
+  border-radius: 80px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  text-decoration: none;
+}
