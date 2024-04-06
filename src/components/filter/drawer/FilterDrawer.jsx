@@ -15,12 +15,13 @@ export default function FilterDrawer({
   filteredData,
   setFilteredData,
   setItemOffset,
-  setRemountComponent
+  setRemountComponent,
 }) {
   // generate initial form state
   const initialFormState = useFormState(searchResults);
 
   const [form, setForm] = useState(initialFormState);
+
   // gets accordion data
   const { getCountryCheckboxes, accordionData } =
     useAccordianData(searchResults);

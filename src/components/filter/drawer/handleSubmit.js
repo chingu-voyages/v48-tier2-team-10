@@ -97,7 +97,7 @@ export const handleSubmit = (
   setFilteredData((prev) => [...new Set(prev)]);
 
   setItemOffset(0);
-  setRemountComponent(Math.random())
+  setRemountComponent(Math.random());
 
   setIsFilterDrawerOpen(false);
 
