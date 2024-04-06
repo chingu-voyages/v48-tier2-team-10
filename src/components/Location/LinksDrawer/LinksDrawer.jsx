@@ -1,5 +1,5 @@
 import styles from "./LinksDrawer.module.css";
-import { useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { DinoDataContext } from "../../../context/DinoDataContext";
 import LinkCard from "./LinkCard";
 import usePagination from "../../Pagination/usePagination";
@@ -13,6 +13,8 @@ export default function LinksDrawer({
   setIsLinksDrawerOpen,
   country,
 }) {
+  const [remountComponent, setRemountComponent] = useState(0);
+
   const { dinoData, loading, error } = useContext(DinoDataContext);
 
   const links = dinoData.filter(
@@ -30,12 +32,14 @@ export default function LinksDrawer({
     if (e.target.id === "overlay") {
       setIsLinksDrawerOpen(false);
       setItemOffset(0);
+      setRemountComponent(Math.random());
     }
   };
 
   const closeDrawer = () => {
     setIsLinksDrawerOpen(false);
     setItemOffset(0);
+    setRemountComponent(Math.random());
   };
 
   // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
@@ -74,6 +78,7 @@ export default function LinksDrawer({
             <Pagination
               pageCount={pageCount}
               handlePageClick={handlePageClick}
+              remountComponent={remountComponent}
             />
           </div>
         )}

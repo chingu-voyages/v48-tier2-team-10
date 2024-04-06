@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import styles from './Sort.module.css'
 
 const Sort = ({ handleSelect }) => {
-  const [selectedOption, setSelectedOption] = useState(null)
   const handler = (e) => {
-    setSelectedOption(e.target.value)
-    handleSelect(selectedOption)
+    handleSelect(e.target.value)
   }
   return (
     <div className={styles.wrapper}>
