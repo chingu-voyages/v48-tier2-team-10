@@ -1,7 +1,14 @@
 import ReactPaginate from "react-paginate";
 import styles from "./Pagination.module.css";
+import { useLocation } from "react-router";
 
-export default function Pagination({ handlePageClick, pageCount }) {
+export default function Pagination({
+  handlePageClick,
+  pageCount,
+  remountComponent,
+}) {
+  const location = useLocation();
+
   const prev = (
     <svg
       width="24"
@@ -32,8 +39,16 @@ export default function Pagination({ handlePageClick, pageCount }) {
     </svg>
   );
 
+  const scrollUp = (e) => {
+    if (location.pathname === "/search") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      e.event.target.offsetParent.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
-    <>
+    <div key={remountComponent}>
       <ReactPaginate
         nextLabel={next}
         onPageChange={handlePageClick}
@@ -52,10 +67,12 @@ export default function Pagination({ handlePageClick, pageCount }) {
         breakLinkClassName={styles.pageLink}
         containerClassName={styles.pagination}
         activeClassName={styles.active}
+        activeLinkClassName={styles.activeLink}
         renderOnZeroPageCount={null}
         disabledClassName={styles.disabled}
         disabledLinkClassName={styles.disabled}
+        onClick={scrollUp}
       />
-    </>
+    </div>
   );
 }

@@ -1,3 +1,45 @@
+.searchPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.total {
+  font-family: "Patua One";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 39.2px;
+  text-align: left;
+  color: #836645;
+  padding: 20px 20px 0px;
+}
+
+.skeletonTotal {
+  color: hsl(200, 20%, 80%);
+  margin: 20px 20px 0px;
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.filterSortContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  padding: 0px 20px;
+}
+
 .filterBtn {
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -9,4 +51,8 @@
   background: none;
   border: 2px solid #39393c;
   border-radius: 80px;
+}
+
+.paginationContainer {
+  margin-top: auto;
 }
