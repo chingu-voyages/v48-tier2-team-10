@@ -1,8 +1,17 @@
 .footer {
-  /* position: fixed; */
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: lightskyblue;
-  margin-top: 2rem;
+  background-color: #465250;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  gap: 10px;
+}
+
+.link {
+  color: #fff;
 }
