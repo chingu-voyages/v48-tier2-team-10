@@ -14,6 +14,7 @@ export default function Accordion({ title, form, setForm, checkboxes }) {
       form={form}
       setForm={setForm}
       checkboxes={checkboxes}
+      title={title}
     />
   ));
 

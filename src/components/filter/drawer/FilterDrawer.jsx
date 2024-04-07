@@ -1,71 +1,73 @@
-import { useState, useEffect } from 'react'
-import Accordion from '../accordion/Accordion'
-import useAccordianData from './useAccordianData'
-import useFormState from './useFormState'
-import styles from './FilterDrawer.module.css'
-import closeIcon from '../../../assets/close.png'
-import { handleSubmit } from './handleSubmit'
+import { useState, useEffect } from "react";
+import Accordion from "../accordion/Accordion";
+import useAccordianData from "./useAccordianData";
+import useFormState from "./useFormState";
+import styles from "./FilterDrawer.module.css";
+import closeIcon from "../../../assets/close.png";
+import { handleSubmit } from "./handleSubmit";
 
 // https://www.kindacode.com/article/react-create-an-animated-side-navigation-from-scratch/
 
 export default function FilterDrawer({
   searchResults,
   isFilterDrawerOpen,
-  setIsFilterDrawerOpen
+  setIsFilterDrawerOpen,
+  filteredData,
+  setFilteredData,
+  setItemOffset,
+  setRemountComponent,
 }) {
-  const [filteredData, setFilteredData] = useState([])
-
   // generate initial form state
-  const initialFormState = useFormState(searchResults)
+  const initialFormState = useFormState(searchResults);
 
-  const [form, setForm] = useState(initialFormState)
+  const [form, setForm] = useState(initialFormState);
 
   // gets accordion data
   const { getCountryCheckboxes, accordionData } =
-    useAccordianData(searchResults)
+    useAccordianData(searchResults);
 
   // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
   useEffect(() => {
     if (isFilterDrawerOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     }
     return () => {
-      document.body.style.overflow = 'scroll'
-    }
-  }, [isFilterDrawerOpen])
+      document.body.style.overflow = "scroll";
+    };
+  }, [isFilterDrawerOpen]);
 
   // function to close drawer when user clicks on overlay
   const handleCloseOverlay = (e) => {
-    if (e.target.id === 'overlay') {
-      setIsFilterDrawerOpen(false)
+    if (e.target.id === "overlay") {
+      setIsFilterDrawerOpen(false);
     }
-  }
+  };
 
   // function to close drawer
   const handleClose = () => {
-    setIsFilterDrawerOpen(false)
+    setIsFilterDrawerOpen(false);
     // rest to initial form state?
     // setForm(initialFormState);
-  }
+  };
 
   // function for reset button
   const handleReset = () => {
     // reset filtered data?
-    setFilteredData([])
-    setForm(initialFormState)
-  }
+    setFilteredData(searchResults);
+    setForm(initialFormState);
+  };
 
   // console.log(filteredData);
 
   return (
     <div
-      className={` ${isFilterDrawerOpen ? styles.overlay : ''}`}
+      className={` ${isFilterDrawerOpen ? styles.overlay : ""}`}
       onClick={handleCloseOverlay}
       id="overlay"
     >
       <div
         className={`${styles.drawer} ${
-          isFilterDrawerOpen ? styles.drawerActive : ''
+          isFilterDrawerOpen ? styles.drawerActive : ""
         }`}
       >
         <div className={styles.header}>
@@ -86,7 +88,9 @@ export default function FilterDrawer({
               searchResults,
               setFilteredData,
               getCountryCheckboxes,
-              setIsFilterDrawerOpen
+              setIsFilterDrawerOpen,
+              setItemOffset,
+              setRemountComponent
             )
           }
           className={styles.filterForm}
@@ -117,5 +121,5 @@ export default function FilterDrawer({
         </form>
       </div>
     </div>
-  )
+  );
 }

@@ -7,6 +7,7 @@ import LinksDrawer from "../components/Location/LinksDrawer/LinksDrawer";
 import styles from "./Landing.module.css";
 import { getCountries } from "../components/Location/getCountries";
 import useToggleModal from "../components/Location/LinksDrawer/useToggleModal";
+import { useRef } from "react";
 
 export default function Landing() {
   const { dinoData, loading, error } = useContext(DinoDataContext);
@@ -19,19 +20,15 @@ export default function Landing() {
     toggleModal,
   } = useToggleModal();
 
-  console.log(dinoData);
-
-  if (loading) return <p>loading...</p>;
-
-  if (error) return <p>cannot fetch dinosaurs</p>;
+  const locationRef = useRef(null);
 
   return (
     <div>
-      <Hero />
+      <Hero locationRef={locationRef} />
 
       <Chart />
 
-      <div className={styles.locationContainer}>
+      <div ref={locationRef} className={styles.locationContainer}>
         <Location dinoData={getCountries(dinoData)} toggleModal={toggleModal} />
       </div>
 

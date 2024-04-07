@@ -1,5 +1,5 @@
 .heroSection {
-  background-image: url('@assets/hero-section-bg.png');
+  background-image: url("@assets/hero-section-bg.png");
   background-size: cover;
   background-position: center;
   height: 250px;
@@ -18,13 +18,15 @@
 }
 
 .button {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   color: #39393c;
   padding: 12px 24px;
   border: 2px solid #39393c;
   border-radius: 80px;
   background-color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .ctaButtons {

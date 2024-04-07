@@ -1,7 +1,13 @@
 import useLookUp from "./useLookUp";
 import { getName } from "./getName";
 import styles from "./Checkbox.module.css";
-export default function Checkbox({ checkbox, form, setForm, checkboxes }) {
+export default function Checkbox({
+  checkbox,
+  form,
+  setForm,
+  checkboxes,
+  title,
+}) {
   // bc the checkbox labels are diff to the keys in the intial form data this is used to lookup and make a connection between the two eg label of "100kg-1000kg" will return Above100kgBelow1000kg, which is the key in the form
   const lookUp = useLookUp(checkboxes);
 
@@ -20,8 +26,8 @@ export default function Checkbox({ checkbox, form, setForm, checkboxes }) {
       <input
         type="checkbox"
         onChange={handleToggle}
-        name={getName(lookUp, checkbox)}
-        checked={form[getName(lookUp, checkbox)]}
+        name={getName(lookUp, checkbox, title)}
+        checked={form[getName(lookUp, checkbox, title)] || false}
         id={checkbox}
         className={styles.checkbox}
       />
