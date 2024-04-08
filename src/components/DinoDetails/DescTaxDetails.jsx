@@ -1,8 +1,13 @@
 import swirlLeft from "../../assets/swirl-left.png";
 import swirlRight from "../../assets/swirl-right.png";
 import styles from "./DescTaxDetails.module.css";
+import { useIsOverflow } from "./useIsOverflow";
+import { useRef } from "react";
 
 export default function DescTaxDetails({ thisDino }) {
+  const ref = useRef();
+  const isOverflow = useIsOverflow(ref);
+
   return (
     <div className={styles.sectionContainer}>
       {/* description */}
@@ -12,7 +17,12 @@ export default function DescTaxDetails({ thisDino }) {
           <h3 className={styles.heading}>Description</h3>
           <img src={swirlRight} alt="right swirl" className={styles.swirl} />
         </div>
-        <div className={styles.descriptionContainer}>
+        <div
+          ref={ref}
+          className={`${styles.descriptionContainer} ${
+            isOverflow ? styles.overflow : styles.centerText
+          }`}
+        >
           <p className={styles.descriptionText}>
             {thisDino.description === "N/A"
               ? `No description available for the ${thisDino.name} dinosaur`
