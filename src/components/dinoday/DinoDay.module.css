@@ -47,7 +47,7 @@
 .cardsWrapper[data-animated='true'] .cardsContainer {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll 10s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .cardsWrapper[data-animated='false'] {
