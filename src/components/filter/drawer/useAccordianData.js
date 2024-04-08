@@ -5,13 +5,13 @@ export default function useAccordianData(searchResults) {
     let arr = [];
     searchResults?.some((dino) => {
       if (dino.diet === "carnivorous") {
-        arr = [...arr, "carnivorous"];
+        arr = [...arr, "Carnivorous"];
       }
       if (dino.diet === "herbivorous") {
-        arr = [...arr, "herbivorous"];
+        arr = [...arr, "Herbivorous"];
       }
       if (dino.diet === "omnivorous") {
-        arr = [...arr, "omnivorous"];
+        arr = [...arr, "Omnivorous"];
       }
     });
     return [...new Set(arr)].sort();
