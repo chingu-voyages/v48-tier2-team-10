@@ -1,0 +1,46 @@
+.cardContainer {
+  width: 296px;
+  height: 334px;
+  border: 1px solid #836645;
+  border-radius: 8px;
+}
+
+.dinoImg {
+  height: 50%;
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.details {
+  height: 50%;
+
+  border-top: 1px solid #836645;
+  padding: 16px 20px;
+  color: #39393c;
+}
+
+.name {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.diet {
+  display: flex;
+  align-items: center;
+}
+
+.diet img {
+  width: 32px;
+  height: 32px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.weight {
+  margin-top: 10px;
+  color: #bababa;
+}
