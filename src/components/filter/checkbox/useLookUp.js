@@ -10,9 +10,9 @@ export default function useLookUp(checkboxes) {
   const countriesLookUp = getCountriesLookUp();
 
   const lookUp = {
-    herbivorous: "herbivorous",
-    carnivorous: "carnivorous",
-    omnivorous: "omnivorous",
+    herbivorous: "Herbivorous",
+    carnivorous: "Carnivorous",
+    omnivorous: "Omnivorous",
     below100kg: "Below 100kg",
     Above100kgBelow1000kg: "100kg-1000kg",
     higherThan1000kg: "Higher than 1000kg",

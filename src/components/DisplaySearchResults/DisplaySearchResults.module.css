@@ -9,8 +9,14 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
+}
+
+@media only screen and (min-width: 1000px) {
+  .displayContainer {
+    justify-content: space-between;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -56,4 +62,9 @@
   100% {
     background-color: hsl(200, 20%, 95%);
   }
+}
+
+.notFound {
+  color: #836645;
+  text-align: center;
 }
