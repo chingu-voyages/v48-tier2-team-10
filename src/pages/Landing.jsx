@@ -8,7 +8,7 @@ import styles from './Landing.module.css'
 import { getCountries } from '../components/Location/getCountries'
 import useToggleModal from '../components/Location/LinksDrawer/useToggleModal'
 import { useRef } from 'react'
-import DinoDay from '../components/dinoday/DinoDay'
+import DinoDay from '../components/DinoOfTheDay/DinoDay'
 
 export default function Landing() {
   const { dinoData, loading, error } = useContext(DinoDataContext)
@@ -27,11 +27,11 @@ export default function Landing() {
     <div>
       <Hero locationRef={locationRef} />
 
-      {/* <Chart /> */}
+      <Chart />
 
       <DinoDay />
 
-      {/* <div ref={locationRef} className={styles.locationContainer}>
+      <div ref={locationRef} className={styles.locationContainer}>
         <Location dinoData={getCountries(dinoData)} toggleModal={toggleModal} />
       </div>
 
@@ -40,7 +40,7 @@ export default function Landing() {
         isLinksDrawerOpen={isLinksDrawerOpen}
         setIsLinksDrawerOpen={setIsLinksDrawerOpen}
         country={country}
-      /> */}
+      />
     </div>
   )
 }
