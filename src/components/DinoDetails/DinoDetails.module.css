@@ -163,6 +163,7 @@
   border-radius: 5px;
   border: none;
   transform: translate(130%, -280%);
+  cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
@@ -201,6 +202,7 @@
     height: 325px;
     flex: 1.2;
   }
+
   .searchResult {
     width: 152px;
     height: 30px;
@@ -210,10 +212,11 @@
     color: #836645;
     background-color: #fefaf4;
     margin-left: 10px;
-    border-radius: 5px;
-    border: none;
     transform: translate(870%, -260%);
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
       rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    cursor: pointer;
+    border: none;
+    outline: none;
   }
 }
