@@ -14,7 +14,7 @@ export default function DinosaurPage() {
 
   return (
     <>
-      <DinoDetails />
+      <DinoDetails thisDino={thisDino} />
 
       <div className={styles.locationContainer}>
         <Location dinoData={[thisDino]} />
