@@ -1,5 +1,5 @@
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   box-sizing: border-box;
 }
 
@@ -9,20 +9,20 @@
 }
 
 .wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('@assets/background-pattern.png');
+  background-image: url("@assets/background-pattern.png");
   background-size: cover;
   opacity: 0.1;
   z-index: -1;
 }
 
 .wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -36,7 +36,7 @@
 
 .dinoName {
   text-align: center;
-  font-family: 'Patua One', serif;
+  font-family: "Patua One", serif;
   font-size: 40px;
   font-weight: 400;
   margin-bottom: 18px;
@@ -93,11 +93,26 @@
   padding: 8px;
   border-radius: 10px;
   order: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.center img {
+/* .center img {
   height: 100%;
   width: 100%;
+  border-radius: 8px;
+} */
+
+/* changed this bc the no image was squashed on large screen */
+.regularImg {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.noImg {
+  object-fit: cover;
   border-radius: 8px;
 }
 
