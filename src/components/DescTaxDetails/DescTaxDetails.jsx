@@ -47,7 +47,10 @@ export default function DescTaxDetails({ thisDino }) {
           <span className={styles.title}>Named by</span>
           <span className={styles.text}>{thisDino.namedBy}</span>
           <span className={styles.title}>Type species</span>
-          <span className={styles.text}>{thisDino.typeSpecies}</span>
+          <span className={styles.text}>
+            {thisDino.typeSpecies.charAt(0).toUpperCase() +
+              thisDino.typeSpecies.slice(1)}
+          </span>
         </div>
       </div>
     </div>
