@@ -1,5 +1,6 @@
 .layoutContainer {
   display: flex;
+  
 
   /*vertically stack children*/
   flex-direction: column;
@@ -12,6 +13,9 @@
 
 .outletContainer {
   flex-grow: 1;
+ 
 }
 
 /* https://dev.to/akshay_rajput/keep-footer-at-bottom-of-page-using-flexbox-4a6f */
+
+
