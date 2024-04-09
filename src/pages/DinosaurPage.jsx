@@ -4,7 +4,7 @@ import DinoDetails from "../components/DinoDetails/DinoDetails";
 import { useContext } from "react";
 import Location from "../components/Location/Location";
 import styles from "./DinosaurPage.module.css";
-import DescTaxDetails from "../components/DinoDetails/DescTaxDetails";
+import DescTaxDetails from "../components/DescTaxDetails/DescTaxDetails";
 
 export default function DinosaurPage() {
   const { dino } = useParams();

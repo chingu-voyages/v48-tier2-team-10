@@ -1,7 +1,7 @@
 import swirlLeft from "../../assets/swirl-left.png";
 import swirlRight from "../../assets/swirl-right.png";
 import styles from "./DescTaxDetails.module.css";
-import { useIsOverflow } from "./useIsOverflow";
+import { useIsOverflow } from "../DinoDetails/useIsOverflow";
 import { useRef } from "react";
 
 export default function DescTaxDetails({ thisDino }) {
