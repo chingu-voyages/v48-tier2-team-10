@@ -23,11 +23,42 @@ const getRandomDino = (data) => {
 }
 
 const DinoDay = () => {
-  const { dinoData } = useContext(DinoDataContext)
+  const { error, dinoData } = useContext(DinoDataContext)
   const randomDino = getRandomDino(dinoData)
-  console.log(randomDino)
 
   const prefersReducedMotion = usePrefersReducedMotion()
+
+  let content = (
+    <div className={styles.cardsWrapper} data-animated={!prefersReducedMotion}>
+      <div className={styles.cardsContainer}>
+        {!randomDino.includes(undefined) &&
+          randomDino.map((dinoObj) => (
+            <Link
+              to={`/dinosaurs/${dinoObj.name}`}
+              key={dinoObj.id}
+              className={styles.link}
+            >
+              <DinoCard dinoObj={dinoObj} />
+            </Link>
+          ))}
+        {!randomDino.includes(undefined) &&
+          randomDino.map((dinoObj) => (
+            <Link
+              aria-hidden={true}
+              to={`/dinosaurs/${dinoObj.name}`}
+              key={dinoObj.id}
+              className={`${styles.link} ${styles.duplicate}`}
+            >
+              <DinoCard dinoObj={dinoObj} />
+            </Link>
+          ))}
+      </div>
+    </div>
+  )
+
+  if (error) {
+    content = <div>Cannot load dinosaurs data. Please try again</div>
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -38,34 +69,7 @@ const DinoDay = () => {
         </h2>
         <img src={swirlRight} alt="" />
       </div>
-      <div
-        className={styles.cardsWrapper}
-        data-animated={!prefersReducedMotion}
-      >
-        <div className={styles.cardsContainer}>
-          {!randomDino.includes(undefined) &&
-            randomDino.map((dinoObj) => (
-              <Link
-                to={`/dinosaurs/${dinoObj.name}`}
-                key={dinoObj.id}
-                className={styles.link}
-              >
-                <DinoCard dinoObj={dinoObj} />
-              </Link>
-            ))}
-          {!randomDino.includes(undefined) &&
-            randomDino.map((dinoObj) => (
-              <Link
-                aria-hidden={true}
-                to={`/dinosaurs/${dinoObj.name}`}
-                key={dinoObj.id}
-                className={`${styles.link} ${styles.duplicate}`}
-              >
-                <DinoCard dinoObj={dinoObj} />
-              </Link>
-            ))}
-        </div>
-      </div>
+      {content}
     </div>
   )
 }
