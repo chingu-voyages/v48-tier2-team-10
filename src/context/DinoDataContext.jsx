@@ -1,42 +1,42 @@
-import { useState, useEffect, createContext } from "react";
-import axios from "axios";
+import { useState, useEffect, createContext } from 'react'
+import axios from 'axios'
 
-export const DinoDataContext = createContext();
+export const DinoDataContext = createContext()
 
 export function DinoDataContextProvider({ children }) {
-  const [dinoData, setDinoData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [dinoData, setDinoData] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true);
-      setError(false);
+      setLoading(true)
+      setError(false)
       try {
         const { data } = await axios.get(
-          "https://chinguapi.onrender.com/dinosaurs"
-        );
+          'https://chinguapi.onrender.com/dinosaurs'
+        )
         // throw new Error("error");
-        setDinoData(data);
+        setDinoData(data)
       } catch (error) {
-        console.error(error);
-        setError(true);
+        console.error(error)
+        setError(true)
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   return (
     <DinoDataContext.Provider
       value={{
         dinoData,
         loading,
-        error,
+        error
       }}
     >
       {children}
     </DinoDataContext.Provider>
-  );
+  )
 }
