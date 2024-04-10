@@ -27,9 +27,9 @@ export default function Landing() {
     <div>
       <Hero locationRef={locationRef} />
 
-      <Chart />
-
       <DinoDay />
+
+      <Chart />
 
       <div ref={locationRef} className={styles.locationContainer}>
         <Location dinoData={getCountries(dinoData)} toggleModal={toggleModal} />
