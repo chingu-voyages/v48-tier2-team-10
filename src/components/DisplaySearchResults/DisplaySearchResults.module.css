@@ -46,6 +46,7 @@
   width: 296px;
   height: 334px;
   border-radius: 8px;
+  text-decoration: none;
 }
 
 .skeletonCard {

@@ -2,6 +2,7 @@ import styles from "./DisplaySearchResults.module.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DinoDataContext } from "../../context/DinoDataContext";
+import DinoCard from "../DinoOfTheDay/DinoCard";
 
 export default function DisplaySearchResults({ currentItems }) {
   const { error } = useContext(DinoDataContext);
@@ -15,17 +16,12 @@ export default function DisplaySearchResults({ currentItems }) {
         >{`Dinosaurs cannot be found at this time`}</p>
       ) : currentItems.length > 0 ? (
         currentItems.map((dino, index) => (
-          // to be changed to a dino card
           <Link
             to={`/dinosaurs/${dino.name}`}
             key={index}
             className={styles.cardContainer}
           >
-            <div>
-              <p>{dino.name}</p>
-              <p>weight: {dino.weight}</p>
-              <p>length: {dino.length}</p>
-            </div>
+            <DinoCard dinoObj={dino} />
           </Link>
         ))
       ) : (
