@@ -1,8 +1,12 @@
 import { ResponsivePieCanvas } from '@nivo/pie'
 import styles from './DonutChart.module.css'
+import { useContext } from 'react'
+import { DinoDataContext } from '../../context/DinoDataContext'
 
-const DonutChart = ({ data }) => {
-  const filteredData = data.filter(
+const DonutChart = () => {
+
+  const {typeData} = useContext(DinoDataContext);
+  const filteredData = typeData.filter(
     (entry) => entry.value !== null && entry.value !== undefined
   )
 

@@ -1,7 +1,12 @@
 import { Pie } from '@nivo/pie'
 import styles from './PieChart.module.css'
+import { useContext } from 'react'
+import { DinoDataContext } from '../../context/DinoDataContext'
 
-const PieChart = ({ data }) => {
+const PieChart = () => {
+
+   const {dietData}= useContext(DinoDataContext);
+
   return (
     <>
       <div className={styles.pieContainer}>
@@ -9,7 +14,7 @@ const PieChart = ({ data }) => {
 
         <Pie
           className="pieChart"
-          data={data}
+          data={dietData}
           width={350}
           height={300}
           margin={{ top: 20, right: 90, bottom: 40, left: 0 }}

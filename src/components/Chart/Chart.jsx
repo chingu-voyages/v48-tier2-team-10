@@ -1,7 +1,9 @@
 import DonutChart from './DonutChart'
 import PieChart from './PieChart'
-import { data, data2 } from './ChartSource'
 import './Chart.css'
+
+
+
 
 function Chart() {
   return (
@@ -16,10 +18,10 @@ function Chart() {
 
         <div className="wrap">
           <div className="pie-chart">
-            <PieChart data={data} />
+            <PieChart/>
           </div>
           <div className="donut-chart">
-            <DonutChart data={data2} />
+            <DonutChart/>
           </div>
         </div>
       </div>
