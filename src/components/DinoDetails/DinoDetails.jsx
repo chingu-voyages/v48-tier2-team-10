@@ -1,15 +1,11 @@
 import styles from "./DinoDetails.module.css";
 import noImage from "../../assets/large-no-dino-img.png";
-import { Link } from "react-router-dom";
 import carnivorousDiet from "@assets/carnivorous.svg";
 
 const DinoDetails = ({ thisDino }) => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.dinoName}>{thisDino.name}</h1>
-      <Link to="/search">
-        <button className={styles.searchResult}>Search Result</button>
-      </Link>
       <h1 className={styles.dinoName}>Aegyptosaurus</h1>
       <div className={styles.group}>
         <div className={styles.left}>
