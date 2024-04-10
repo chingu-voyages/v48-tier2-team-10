@@ -130,6 +130,6 @@ If you encounter any issues or have suggestions for improvements, please don't h
 - <a href="#">Homepage</a>
 - <a href="#">Search Page</a>
 - <a href="#">Dinosaur Details Page</a>
-- <a href="#">Recipe Page</a>
+
 
 
