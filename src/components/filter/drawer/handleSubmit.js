@@ -35,6 +35,12 @@ export const handleSubmit = (
     );
     setFilteredData((prev) => [...prev, ...filteredResults]);
   }
+  if (form.unknown) {
+    const filteredResults = searchResults.filter(
+      (item) => item.diet === "unknown"
+    );
+    setFilteredData((prev) => [...prev, ...filteredResults]);
+  }
 
   // WEIGHT
   //  if a weight checkbox is checked then these if statements will filter that weight
