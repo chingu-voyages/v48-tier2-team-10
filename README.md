@@ -17,6 +17,7 @@
     <li><a href="#project-style">Project Style</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#pages">Pages</a></li>
+    <li><a href="#pages">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -56,7 +57,7 @@
 - **JavaScript**: JavaScript is the primary programming language for building the app's functionality.
 - **Nivo**: Nivo is used for creating rich and interactive chart components.
 - **React Leaflet**: React Leaflet and Leaflet is used for creating interactive map components.
-- **Axios**: Axios is used for making HTTP requests to fetch recipe data from external sources.
+- **Axios**: Axios is used for making HTTP requests to fetch dinosaur data from external sources.
 - **Figma**: Figma is used for designing and prototyping the user interface, contributing to a visually pleasing user experience.
 
 <h2 id="developers">III. Developers</h2>
@@ -131,5 +132,6 @@ If you encounter any issues or have suggestions for improvements, please don't h
 - <a href="#">Search Page</a>
 - <a href="#">Dinosaur Details Page</a>
 
+<h2 id="pages">IX. Acknowledgments</h2>
 
-
+Credit to <a href="https://github.com/johncarlolipa"><img src="https://img.shields.io/badge/johncarlolipa-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"></a> for README template
