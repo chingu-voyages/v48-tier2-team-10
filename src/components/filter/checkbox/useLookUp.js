@@ -13,6 +13,7 @@ export default function useLookUp(checkboxes) {
     herbivorous: "Herbivorous",
     carnivorous: "Carnivorous",
     omnivorous: "Omnivorous",
+    unknown: "Unknown",
     below100kg: "Below 100kg",
     Above100kgBelow1000kg: "100kg-1000kg",
     higherThan1000kg: "Higher than 1000kg",

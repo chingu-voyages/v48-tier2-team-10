@@ -13,6 +13,9 @@ export default function useAccordianData(searchResults) {
       if (dino.diet === "omnivorous") {
         arr = [...arr, "Omnivorous"];
       }
+      if (dino.diet === "unknown") {
+        arr = [...arr, "Unknown"];
+      }
     });
     return [...new Set(arr)].sort();
   };
