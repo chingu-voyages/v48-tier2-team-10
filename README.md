@@ -2,7 +2,7 @@
 
 <p class="header">Welcome to DinoSoul, where you can time travel and discover the world of dinosaurs. This README provides an overview of the app's functionality, features, and the technologies used to bring it to life.</p>
 
-<img src="./src/assets/dinoLogo.png">
+<img src="https://github.com/chingu-voyages/v48-tier2-team-10/assets/54846234/2a30cd6e-c352-4124-a8ba-af8e939892a6">
 
 </br>
 
@@ -73,7 +73,7 @@ TBA
 
 Color Scheme
 
-<a href=""><img src="https://img.shields.io/badge/Primary%20Color-%23836645-836645"></a> <a href=""><img src="https://img.shields.io/badge/Secondary%20Color-%23D2DE32-FD2DE32"> </a><a href=""><img src="https://img.shields.io/badge/Secondary%20Color-%23A2C579-A2C579"></a></a> <a href=""><img src="https://img.shields.io/badge/Secondary%20Color-%23FFFFDD-FFFFDD"></a>
+<a href=""><img src="https://img.shields.io/badge/Primary-%23836645-836645"><a href=""></a> <img src="https://img.shields.io/badge/Primary%20Light1-%23A18A70-A18A70"></a> <img src="https://img.shields.io/badge/Primary%20Light2-%23F3EBDE-F3EBDE"></a> <a href=""><img src="https://img.shields.io/badge/Secondary-%23739B94-739B94"></a> <a href=""><img src="https://img.shields.io/badge/Secondary%20Dark-%23465250-465250"></a> <a href=""><img src="https://img.shields.io/badge/Secondary%20Light-%23D3F6CA-D3F6CA"></a>
 
 Logo
 
