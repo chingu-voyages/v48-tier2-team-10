@@ -27,14 +27,14 @@ export default function FilterDrawer({
     useAccordianData(searchResults);
 
   // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
-  useEffect(() => {
-    if (isFilterDrawerOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    return () => {
-      document.body.style.overflow = "scroll";
-    };
-  }, [isFilterDrawerOpen]);
+  // useEffect(() => {
+  //   if (isFilterDrawerOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "scroll";
+  //   };
+  // }, [isFilterDrawerOpen]);
 
   // function to close drawer when user clicks on overlay
   const handleCloseOverlay = (e) => {
