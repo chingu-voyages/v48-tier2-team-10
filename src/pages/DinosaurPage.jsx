@@ -1,20 +1,24 @@
-import { useParams } from "react-router-dom";
-import { DinoDataContext } from "../context/DinoDataContext";
-import DinoDetails from "../components/DinoDetails/DinoDetails";
-import { useContext } from "react";
-import Location from "../components/Location/Location";
-import styles from "./DinosaurPage.module.css";
-import DescTaxDetails from "../components/DescTaxDetails/DescTaxDetails";
+import { Link, useParams } from 'react-router-dom'
+import { DinoDataContext } from '../context/DinoDataContext'
+import DinoDetails from '../components/DinoDetails/DinoDetails'
+import { useContext } from 'react'
+import Location from '../components/Location/Location'
+import styles from './DinosaurPage.module.css'
+import DescTaxDetails from '../components/DescTaxDetails/DescTaxDetails'
 
 export default function DinosaurPage() {
-  const { dino } = useParams();
+  const { dino } = useParams()
 
-  const { dinoData } = useContext(DinoDataContext);
+  const { dinoData } = useContext(DinoDataContext)
 
-  const thisDino = dinoData.find((dinosaur) => dinosaur.name === dino);
+  const thisDino = dinoData.find((dinosaur) => dinosaur.name === dino)
 
   return (
-    <>
+    <div className={styles.wrapper}>
+      <Link to={'/search'} className={styles.backBtn}>
+        Search Result
+      </Link>
+
       <DinoDetails thisDino={thisDino} />
 
       <div className={styles.locationContainer}>
@@ -24,6 +28,6 @@ export default function DinosaurPage() {
       <div className={styles.descTaxDetailsContainer}>
         <DescTaxDetails thisDino={thisDino} />
       </div>
-    </>
-  );
+    </div>
+  )
 }

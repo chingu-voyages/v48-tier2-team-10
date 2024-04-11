@@ -62,7 +62,6 @@ export function DinoDataContextProvider({ children }) {
       ) {
         diet.unknown = (diet.unknown || 0) + 1
       }
-      console.log(diet.unknown)
     })
 
     const dietData = [

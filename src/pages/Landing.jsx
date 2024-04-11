@@ -11,13 +11,13 @@ import { useRef } from 'react'
 import DinoDay from '../components/DinoOfTheDay/DinoDay'
 
 export default function Landing() {
-  const { dinoData, loading, error } = useContext(DinoDataContext)
+  const { dinoData } = useContext(DinoDataContext)
 
   const {
     isLinksDrawerOpen,
     setIsLinksDrawerOpen,
     country,
-    setCountry,
+
     toggleModal
   } = useToggleModal()
 
