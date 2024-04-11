@@ -14,7 +14,7 @@ export default function Location({ dinoData, toggleModal }) {
     <div className={styles.container}>
       <div className={styles.heading}>
         <img src={swirlLeft} alt="swirl-left" />
-        <h2 className={styles.title}>
+        <h2 className={`${location.pathname === "/" ? styles.landingTitle : styles.detailTitle}`}>
           {location.pathname === "/" ? "Location" : "Found In"}
         </h2>
         <img src={swirlRight} alt="swirl-right" />
