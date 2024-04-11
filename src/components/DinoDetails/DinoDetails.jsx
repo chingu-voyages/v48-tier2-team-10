@@ -1,10 +1,12 @@
 import styles from "./DinoDetails.module.css";
 import noImage from "../../assets/large-no-dino-img.png";
+import carnivorousDiet from "@assets/carnivorous.svg";
 
 const DinoDetails = ({ thisDino }) => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.dinoName}>{thisDino.name}</h1>
+      <h1 className={styles.dinoName}>Aegyptosaurus</h1>
       <div className={styles.group}>
         <div className={styles.left}>
           <h3 className={styles.title}>Diet</h3>
