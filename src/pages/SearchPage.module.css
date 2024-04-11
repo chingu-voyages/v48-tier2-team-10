@@ -5,8 +5,48 @@
   margin-bottom: 20px;
 }
 
+.searchAndCharts {
+  padding-top: 80px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+}
+
+.searchAndCharts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-color: #f3ebde;
+  z-index: -3;
+}
+.searchAndCharts::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('@assets/background-pattern.png');
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.chartsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .total {
-  font-family: "Patua One";
+  font-family: 'Patua One';
   font-size: 28px;
   font-weight: 400;
   line-height: 39.2px;
@@ -41,7 +81,7 @@
 }
 
 .filterBtn {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -55,4 +95,25 @@
 
 .paginationContainer {
   margin-top: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .chartsContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .searchAndCharts {
+    padding-top: 32px;
+    /* padding-bottom: 32px; */
+    /* padding-inline: 12px; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 20px; */
+    gap: 0px;
+    position: relative;
+  }
 }
