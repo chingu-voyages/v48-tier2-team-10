@@ -1,9 +1,7 @@
-.container {
+/* .container {
   height: 100%;
-  width: 100%;
-  /* background-color: #f3ebde; */
-  margin-bottom: 40px;
-}
+  width: 100%; 
+} */
 
 .skeletonMap {
   height: 60vh;
@@ -17,20 +15,6 @@
   }
   100% {
     background-color: hsl(200, 20%, 95%);
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  /* For tablets */
-  .container {
-    padding-top: 3rem;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .container {
-    padding-top: 7rem;
   }
 }
 
