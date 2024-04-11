@@ -1,28 +1,28 @@
 * {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   box-sizing: border-box;
 }
 
 .wrapper {
   position: relative;
-  padding-block: 32px;
+  padding: 32px 12px;
 }
 
 .wrapper::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url("@assets/background-pattern.png");
+  background-image: url('@assets/background-pattern.png');
   background-size: cover;
   opacity: 0.1;
   z-index: -1;
 }
 
 .wrapper::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -30,13 +30,12 @@
   left: 0;
   background-size: cover;
   background-color: #f3ebde;
-
   z-index: -3;
 }
 
 .dinoName {
   text-align: center;
-  font-family: "Patua One", serif;
+  font-family: 'Patua One', serif;
   font-size: 40px;
   font-weight: 400;
   margin-bottom: 18px;

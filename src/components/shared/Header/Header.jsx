@@ -5,7 +5,7 @@ import logo from '@assets/dinoLogo.png'
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link to="/">
+      <Link to="/" className={styles.link}>
         <img src={logo} alt="DinoSoul Logo" className={styles.dinoLogo} />
       </Link>
     </header>

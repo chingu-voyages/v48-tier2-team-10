@@ -3,6 +3,10 @@
   border-bottom: 0.5px solid #836645;
 }
 
+.link {
+  display: inline-block;
+}
+
 .dinoLogo {
   height: 32px;
 }
