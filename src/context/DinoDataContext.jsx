@@ -1,40 +1,42 @@
-import { useState, useEffect, createContext } from 'react'
-import axios from 'axios'
+import { useState, useEffect, createContext } from "react";
+import axios from "axios";
 
-export const DinoDataContext = createContext()
+export const DinoDataContext = createContext();
 
 export function DinoDataContextProvider({ children }) {
   const [dinoData, setDinoData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [dietData, setDietData] = useState([]);
-  const [typeData,setTypeData] = useState([]);
+  const [typeData, setTypeData] = useState([]);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true)
-      setError(false)
+      setLoading(true);
+      setError(false);
       try {
         const { data } = await axios.get(
-          'https://chinguapi.onrender.com/dinosaurs'
-        )
+          "https://chinguapi.onrender.com/dinosaurs"
+        );
         // throw new Error("error");
-        setDinoData(data)
+        setDinoData(data);
       } catch (error) {
-        console.error(error)
-        setError(true)
+        console.error(error);
+        setError(true);
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const diet = {
       carnivorous: 0,
       herbivorous: 0,
-      omnivorous: 0
+      omnivorous: 0,
+      extras: 0,
+      unknown: 0,
     };
 
     dinoData.forEach((dinosaur) => {
@@ -47,27 +49,53 @@ export function DinoDataContextProvider({ children }) {
       if (dinosaur.diet === "herbivorous") {
         diet.herbivorous++;
       }
+      if (dinosaur.diet === "herbivorous or omnivorous") {
+        diet.extras++;
+      }
+      if (
+        ![
+          "omnivorous",
+          "carnivorous",
+          "herbivorous",
+          "herbivorous or omnivorous",
+        ].includes(dinosaur.diet)
+      ) {
+        diet.unknown = (diet.unknown || 0) + 1;
+      }
+      console.log(diet.unknown);
     });
 
     const dietData = [
       {
-        id: "carnivorous",
-        label: "carnivorous",
-        value: Math.floor((diet.carnivorous * 100) / dinoData.length),
-        color: "hsl(218,70%,50%)"
+        id: "Carnivorous",
+        label: "Carnivorous",
+        value: Math.floor((diet.carnivorous / dinoData.length) * 100),
+        color: "hsl(208,70%,50%)",
       },
       {
         id: "herbivorous",
-        label: "herbivorous",
+        label: "Herbivorous",
         value: Math.floor((diet.herbivorous / dinoData.length) * 100),
-        color: "hsl(189, 70%, 50%)"
+        color: "hsl(269, 70%, 50%)",
       },
       {
-        id: "omnivorous",
-        label: "omnivorous",
+        id: "Omnivorous",
+        label: "Omnivorous",
         value: Math.floor((diet.omnivorous / dinoData.length) * 100),
-        color: "hsl(52, 70%, 50%)"
-      }
+        color: "hsl(152, 70%, 50%)",
+      },
+      {
+        id: "herbivorous or omnivorous",
+        label: "Herbi / Omnivorous",
+        value: Math.ceil((diet.extras / dinoData.length) * 100),
+        color: "hsl(82,70%,50%)",
+      },
+      {
+        id: "unknown",
+        label: "Unknown",
+        value: Math.ceil((diet.unknown / dinoData.length) * 100),
+        color: "hsl(82,70%,50%)",
+      },
     ];
 
     setDietData(dietData);
@@ -83,7 +111,7 @@ export function DinoDataContextProvider({ children }) {
       armoured_dinosaur: 0,
       large_ornithopod: 0,
       small_ornithopod: 0,
-      early_dinosaur: 0
+      early_dinosaur: 0,
     };
 
     dinoData.forEach((dinosaur) => {
@@ -122,53 +150,53 @@ export function DinoDataContextProvider({ children }) {
     const typeData = [
       {
         id: "prosauropod",
-        label: "prosauropod",
+        label: "Prosauropod",
         value: type.prosauropod,
-        color: "hsl(87, 70%, 50%)"
+        color: "hsl(87, 70%, 50%)",
       },
       {
-        id: "large theropod",
-        label: "large theropod",
+        id: "Large Theropod",
+        label: "Large Theropod",
         value: type.large_theropod,
-        color: "hsl(148, 70%, 50%)"
+        color: "hsl(148, 70%, 50%)",
       },
       {
-        id: "ceratopsian",
-        label: "ceratopsian",
+        id: "Ceratopsian",
+        label: "Ceratopsian",
         value: type.ceratopsian,
-        color: "hsl(254, 70%, 50%)"
+        color: "hsl(254, 70%, 50%)",
       },
-      { id: "sauropod", label: "sauropod", value: type.sauropod, color: "" },
+      { id: "sauropod", label: "Sauropod", value: type.sauropod, color: "" },
       {
-        id: "small theropod",
-        label: "small theropod",
+        id: "Small Theropod",
+        label: "Small Theropod",
         value: type.small_theropod,
-        color: "hsl(246, 70%, 50%)"
+        color: "hsl(246, 70%, 50%)",
       },
       {
-        id: "armoured dinosaur",
-        label: "armoured dinosaur",
+        id: "Armoured Dinosaur",
+        label: "Armoured Dinosaur",
         value: type.armoured_dinosaur,
-        color: "hsl(93, 70%, 50%)"
+        color: "hsl(93, 70%, 50%)",
       },
       {
-        id: "large ornithopod",
-        label: "large ornithopod",
+        id: "Large Ornithopod",
+        label: "Large Ornithopod",
         value: type.large_ornithopod,
-        color: "hsl(208, 70%, 50%)"
+        color: "hsl(208, 70%, 50%)",
       },
       {
-        id: "small ornithopod",
-        label: "small ornithopod",
+        id: "Small Ornithopod",
+        label: "Small Ornithopod",
         value: type.small_ornithopod,
-        color: "hsl(173, 70%, 50%)"
+        color: "hsl(173, 70%, 50%)",
       },
       {
-        id: "early dinosaur",
-        label: "early dinosaur",
+        id: "Early Dinosaur",
+        label: "Early Dinosaur",
         value: type.early_dinosaur,
-        color: "hsl(151, 70%, 50%)"
-      }
+        color: "hsl(151, 70%, 50%)",
+      },
     ];
 
     setTypeData(typeData);
@@ -179,16 +207,12 @@ export function DinoDataContextProvider({ children }) {
       value={{
         dinoData,
         loading,
-<<<<<<< HEAD
-        error
-=======
         error,
         dietData,
-        typeData
->>>>>>> 4bf8510 (Dynamic)
+        typeData,
       }}
     >
       {children}
     </DinoDataContext.Provider>
-  )
+  );
 }

@@ -11,7 +11,6 @@ function Chart() {
       <div className="container">
         <div className="title">
           <img className="left" src="/images/Vector.png"></img>
-
           <p>Composition about Dinosaurs</p>
           <img className="right" src="./images/Vectorright.png"></img>
         </div>

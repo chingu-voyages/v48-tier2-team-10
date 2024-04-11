@@ -28,6 +28,13 @@ const DonutChart = () => {
             from: 'color',
             modifiers: [['darker', 0.6]]
           }}
+          theme={{
+            labels: {
+              text: {
+                fontSize: 13,
+              },
+            },
+          }}
           arcLabelsRadiusOffset={100}
           arcLinkLabelsSkipAngle={100}
           arcLinkLabelsTextColor="white"
