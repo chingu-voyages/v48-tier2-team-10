@@ -10,8 +10,13 @@ export default function DinosaurPage() {
   const { dino } = useParams()
 
   const { dinoData } = useContext(DinoDataContext)
-
   const thisDino = dinoData.find((dinosaur) => dinosaur.name === dino)
+
+  if (!thisDino) {
+    return (
+      <div className={styles.loadingMessage}>Loading dinosaur details...</div>
+    )
+  }
 
   return (
     <div className={styles.wrapper}>
