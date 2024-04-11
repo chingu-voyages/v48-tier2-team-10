@@ -1,7 +1,13 @@
 .map {
-  height: 60vh;
-  /* height: 372px; */
+  height: 476px;
   border-radius: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .map {
+    height: 372px;
+  }
 }
 
 .mapContainer a {
