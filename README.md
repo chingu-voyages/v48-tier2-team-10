@@ -77,11 +77,12 @@ Color Scheme
 
 Logo
 
-<img src="./public/favicon.svg" style="background-color: white; padding: 2rem;"></br>
+<img src="https://github.com/chingu-voyages/v48-tier2-team-10/assets/54846234/2a30cd6e-c352-4124-a8ba-af8e939892a6" width="300">
 
 Favicon
 
-<img src="./public/favicon.svg" style="background-color: white; padding: 2rem;"></br>
+&nbsp;&nbsp;&nbsp;<img src="./src/assets/pin.png" height="40"></br>
+
 
 Typography
 
