@@ -58,6 +58,7 @@
 - **React Router**: React Router is used for routing and navigation.
 - **Nivo**: Nivo is used for creating rich and interactive chart components.
 - **React Leaflet**: React Leaflet and Leaflet is used for creating interactive map components.
+- **React Paginate**: React Paginate is used to create pagination for large datasets.
 - **Axios**: Axios is used for making HTTP requests to fetch dinosaur data from external sources.
 - **Figma**: Figma is used for designing and prototyping the user interface, contributing to a visually pleasing user experience.
 
