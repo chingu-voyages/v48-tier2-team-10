@@ -43,14 +43,14 @@ export default function LinksDrawer({
   };
 
   // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
-  useEffect(() => {
-    if (isLinksDrawerOpen) {
-      document.body.style.overflow = "hidden";
-    }
-    return () => {
-      document.body.style.overflow = "scroll";
-    };
-  }, [isLinksDrawerOpen]);
+  // useEffect(() => {
+  //   if (isLinksDrawerOpen) {
+  //     document.body.style.overflowY = "hidden";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "scroll";
+  //   };
+  // }, [isLinksDrawerOpen]);
 
   return (
     <div
