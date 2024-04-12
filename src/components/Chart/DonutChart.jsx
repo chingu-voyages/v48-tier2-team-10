@@ -4,8 +4,7 @@ import { useContext } from 'react'
 import { DinoDataContext } from '../../context/DinoDataContext'
 
 const DonutChart = () => {
-
-  const {typeData} = useContext(DinoDataContext);
+  const { typeData } = useContext(DinoDataContext)
   const filteredData = typeData.filter(
     (entry) => entry.value !== null && entry.value !== undefined
   )
@@ -13,7 +12,9 @@ const DonutChart = () => {
   return (
     <>
       <div className={styles.topContainer}>
-        <p>Type Composition</p>
+        <p style={{ textAlign: 'center' }}>
+          Type Composition for All Dinosaurs
+        </p>
         <ResponsivePieCanvas
           data={filteredData}
           width={360}
@@ -31,9 +32,9 @@ const DonutChart = () => {
           theme={{
             labels: {
               text: {
-                fontSize: 13,
-              },
-            },
+                fontSize: 13
+              }
+            }
           }}
           arcLabelsRadiusOffset={100}
           arcLinkLabelsSkipAngle={100}

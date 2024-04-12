@@ -21,7 +21,7 @@ export default function DinosaurPage() {
   return (
     <div className={styles.wrapper}>
       <Link to={'/search'} className={styles.backBtn}>
-        Search Result
+        Search
       </Link>
 
       <DinoDetails thisDino={thisDino} />
