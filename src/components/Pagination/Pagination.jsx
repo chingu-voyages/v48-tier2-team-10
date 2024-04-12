@@ -6,6 +6,7 @@ export default function Pagination({
   handlePageClick,
   pageCount,
   remountComponent,
+  resultsRef,
 }) {
   const location = useLocation();
 
@@ -41,7 +42,9 @@ export default function Pagination({
 
   const scrollUp = (e) => {
     if (location.pathname === "/search") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      resultsRef.current?.scrollIntoView({
+        behavior: "smooth",
+      });
     } else {
       e.event.target.offsetParent.scrollTo({ top: 0, behavior: "smooth" });
     }

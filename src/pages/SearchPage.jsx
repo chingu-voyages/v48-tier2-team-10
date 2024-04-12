@@ -1,78 +1,81 @@
-import { useState, useContext, useEffect } from 'react'
-import SearchBar from '../components/SearchBar/SearchBar'
-import { DinoDataContext } from '../context/DinoDataContext'
-import FilterDrawer from '../components/filter/drawer/FilterDrawer'
-import styles from './SearchPage.module.css'
-import Pagination from '../components/Pagination/Pagination'
-import DisplaySearchResults from '../components/DisplaySearchResults/DisplaySearchResults'
-import usePagination from '../components/Pagination/usePagination'
-import Sort from '../components/Sort/Sort'
+import { useState, useContext, useEffect } from "react";
+import SearchBar from "../components/SearchBar/SearchBar";
+import { DinoDataContext } from "../context/DinoDataContext";
+import FilterDrawer from "../components/filter/drawer/FilterDrawer";
+import styles from "./SearchPage.module.css";
+import Pagination from "../components/Pagination/Pagination";
+import DisplaySearchResults from "../components/DisplaySearchResults/DisplaySearchResults";
+import usePagination from "../components/Pagination/usePagination";
+import Sort from "../components/Sort/Sort";
 import {
   sortByLengthHighLow,
   sortByLengthLowHigh,
   sortNameAZ,
   sortNameZA,
   sortByWeightHighLow,
-  sortByWeightLowHigh
-} from '../components/Sort/sort-helper'
-import PieChart from '../components/Chart/PieChart'
-import DonutChart from '../components/Chart/DonutChart'
+  sortByWeightLowHigh,
+} from "../components/Sort/sort-helper";
+import PieChart from "../components/Chart/PieChart";
+import DonutChart from "../components/Chart/DonutChart";
+import { useRef } from "react";
 
 export default function SearchPage() {
-  const { dinoData } = useContext(DinoDataContext)
+  const { dinoData } = useContext(DinoDataContext);
 
-  const [searchResults, setSearchResults] = useState()
+  const [searchResults, setSearchResults] = useState();
 
-  const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState([]);
 
-  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false)
+  const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
 
-  const [remountComponent, setRemountComponent] = useState(0)
+  const [remountComponent, setRemountComponent] = useState(0);
+
+  const resultsRef = useRef(null);
 
   const { currentItems, pageCount, handlePageClick, setItemOffset } =
-    usePagination(12, filteredData)
+    usePagination(12, filteredData);
   // the number is how many cards is shown on a page at a time, can be changed
 
   useEffect(() => {
-    setSearchResults(dinoData)
-    setFilteredData(dinoData)
-  }, [dinoData])
+    setSearchResults(dinoData);
+    setFilteredData(dinoData);
+  }, [dinoData]);
 
   const handleSelect = (selectedOption) => {
-    let sortedData
-    const dupFilteredData = [...filteredData]
+    let sortedData;
+    const dupFilteredData = [...filteredData];
     // console.log(dupFilteredData)
 
     switch (selectedOption) {
-      case '':
-        sortedData = dupFilteredData
-        break
-      case 'nameAZ':
-        sortedData = sortNameAZ(dupFilteredData)
-        break
-      case 'nameZA':
-        sortedData = sortNameZA(dupFilteredData)
-        break
-      case 'weightHighLow':
-        sortedData = sortByWeightHighLow(dupFilteredData)
-        break
-      case 'weightLowHigh':
-        sortedData = sortByWeightLowHigh(dupFilteredData)
-        break
-      case 'lengthHighLow':
-        sortedData = sortByLengthHighLow(dupFilteredData)
-        break
-      case 'lengthLowHigh':
-        sortedData = sortByLengthLowHigh(dupFilteredData)
-        break
+      case "":
+        sortedData = dupFilteredData;
+        break;
+      case "nameAZ":
+        sortedData = sortNameAZ(dupFilteredData);
+        break;
+      case "nameZA":
+        sortedData = sortNameZA(dupFilteredData);
+        break;
+      case "weightHighLow":
+        sortedData = sortByWeightHighLow(dupFilteredData);
+        break;
+      case "weightLowHigh":
+        sortedData = sortByWeightLowHigh(dupFilteredData);
+        break;
+      case "lengthHighLow":
+        sortedData = sortByLengthHighLow(dupFilteredData);
+        break;
+      case "lengthLowHigh":
+        sortedData = sortByLengthLowHigh(dupFilteredData);
+        break;
       default:
-        break
+        break;
     }
 
-    setFilteredData(sortedData)
-    setItemOffset(0)
-    setRemountComponent(Math.random())
-  }
+    setFilteredData(sortedData);
+    setItemOffset(0);
+    setRemountComponent(Math.random());
+  };
 
   return (
     <div className={styles.searchPageContainer}>
@@ -89,7 +92,9 @@ export default function SearchPage() {
         </div>
       </div>
 
-      <p className={styles.total}>Total {filteredData?.length} Dinosaurs</p>
+      <p ref={resultsRef} className={styles.total}>
+        Total {filteredData?.length} Dinosaurs
+      </p>
 
       {/* skeleton option */}
       {/* {currentItems.length > 0 ? (
@@ -116,6 +121,7 @@ export default function SearchPage() {
           pageCount={pageCount}
           handlePageClick={handlePageClick}
           remountComponent={remountComponent}
+          resultsRef={resultsRef}
         />
       </div>
 
@@ -129,5 +135,5 @@ export default function SearchPage() {
         setRemountComponent={setRemountComponent}
       />
     </div>
-  )
+  );
 }
