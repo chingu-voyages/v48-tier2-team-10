@@ -1,21 +1,11 @@
 .layoutContainer {
   display: flex;
-  
-
-  /*vertically stack children*/
   flex-direction: column;
-
-  /* expand to take full height of page */
-  /* min-height overrides both height & max-height */
-  /* height: calc(100vh - 20px); */
   min-height: 100vh;
 }
 
 .outletContainer {
   flex-grow: 1;
- 
 }
 
 /* https://dev.to/akshay_rajput/keep-footer-at-bottom-of-page-using-flexbox-4a6f */
-
-

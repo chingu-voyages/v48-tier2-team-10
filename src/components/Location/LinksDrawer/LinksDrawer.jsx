@@ -1,5 +1,5 @@
 import styles from "./LinksDrawer.module.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { DinoDataContext } from "../../../context/DinoDataContext";
 import LinkCard from "./LinkCard";
 import usePagination from "../../Pagination/usePagination";
@@ -41,16 +41,6 @@ export default function LinksDrawer({
     setItemOffset(0);
     setRemountComponent(Math.random());
   };
-
-  // to stop body scroll when filter drawer is open - this seems an odd way to do it, does anyone know of a better way?
-  // useEffect(() => {
-  //   if (isLinksDrawerOpen) {
-  //     document.body.style.overflowY = "hidden";
-  //   }
-  //   return () => {
-  //     document.body.style.overflow = "scroll";
-  //   };
-  // }, [isLinksDrawerOpen]);
 
   return (
     <div
