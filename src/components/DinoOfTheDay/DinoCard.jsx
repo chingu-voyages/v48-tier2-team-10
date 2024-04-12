@@ -1,42 +1,43 @@
-import styles from './DinoCard.module.css'
-import herbivorous from '@assets/herbivorous.svg'
-import carnivorous from '@assets/carnivorous.svg'
-import omnivorous from '@assets/omnivorous.svg'
-import unknownDiet from '@assets/unknownDiet.svg'
-import locationpin from '@assets/locationpin.svg'
-import noImg from '@assets/no-dino-img.png'
-import { capFirstLetter } from '../../utils/utils'
+import styles from "./DinoCard.module.css";
+import herbivorous from "@assets/herbivorous.svg";
+import carnivorous from "@assets/carnivorous.svg";
+import omnivorous from "@assets/omnivorous.svg";
+import unknownDiet from "@assets/unknownDiet.svg";
+import locationpin from "@assets/locationpin.svg";
+// import noImg from "@assets/no-dino-img.png";
+import noImg from "@assets/large-no-dino-img.png";
+import { capFirstLetter } from "../../utils/utils";
 
 const DinoCard = ({ dinoObj }) => {
-  let dietImg
+  let dietImg;
   switch (dinoObj.diet) {
-    case 'herbivorous':
-      dietImg = herbivorous
-      break
-    case 'omnivorous':
-      dietImg = omnivorous
-      break
-    case 'herbivorous or omnivorous':
-      dietImg = omnivorous
-      break
-    case 'carnivorous':
-      dietImg = carnivorous
-      break
-    case 'unknown':
-      dietImg = unknownDiet
-      break
+    case "herbivorous":
+      dietImg = herbivorous;
+      break;
+    case "omnivorous":
+      dietImg = omnivorous;
+      break;
+    case "herbivorous or omnivorous":
+      dietImg = omnivorous;
+      break;
+    case "carnivorous":
+      dietImg = carnivorous;
+      break;
+    case "unknown":
+      dietImg = unknownDiet;
+      break;
     default:
-      break
+      break;
   }
 
-  const weight = dinoObj.weight === 'N/A' ? '??kg' : `${dinoObj.weight}kg`
-  const length = dinoObj.length === 'N/A' ? '??m' : `${dinoObj.length}m`
+  const weight = dinoObj.weight === "N/A" ? "??kg" : `${dinoObj.weight}kg`;
+  const length = dinoObj.length === "N/A" ? "??m" : `${dinoObj.length}m`;
 
   return (
     <div className={styles.cardContainer}>
       <img
         className={styles.dinoImg}
-        src={dinoObj.imageSrc !== 'N/A' ? dinoObj.imageSrc : noImg}
+        src={dinoObj.imageSrc !== "N/A" ? dinoObj.imageSrc : noImg}
         alt=""
       />
       <div className={styles.details}>
@@ -54,7 +55,7 @@ const DinoCard = ({ dinoObj }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DinoCard
+export default DinoCard;
