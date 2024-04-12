@@ -28,24 +28,24 @@
 
 ### Landing Page
 
-- **Dinosaurs of the Day Component**: A scrolling carousel randomly chooses dinosaurs of the day.  Users can click a card and be taken to their selected dinosaur’s details page.
+- **Dinosaurs of the Day Component**: A scrolling carousel randomly chooses dinosaurs of the day. Users can click a card and be taken to their selected dinosaur’s details page.
 - **Charts**: Two charts (pie chart and doughnut chart) illustrate the distribution of general dinosaur diets and type of dinosaurs.
-- **Location Map**:  An interactive map allows the user to click on a pin which opens a drawer showing dinosaurs in that country.  Users can click a card and be taken to their selected dinosaur’s details page.
+- **Location Map**: An interactive map allows the user to click on a pin which opens a drawer showing dinosaurs in that country. Users can click a card and be taken to their selected dinosaur’s details page.
 
 ### Search Page
 
 - The app offers access to over 300 dinosaurs.
 - Results are paginated, ensuring a user-friendly experience.
 - **Search Component**: A search feature allowing users to search for dinosaurs by name.
-- **Filter**:  Users can dynamically filter their search results by diet, country, weight, and length.
-- **Sort**:  Users can sort their search results alphabetically, weight, and length.
-- **Dinosaur Display**:  Dinosaur cards display dinosaurs' name, weight, length, country, diet and corresponding images .
+- **Filter**: Users can dynamically filter their search results by diet, country, weight, and length.
+- **Sort**: Users can sort their search results alphabetically, weight, and length.
+- **Dinosaur Display**: Dinosaur cards display dinosaurs' name, weight, length, country, diet and corresponding images .
 
 ### Dinosaur Details Page
 
-- Each dinosaur has its own dynamically generated page, enabling users to view full details of their selected dinosaur. 
+- Each dinosaur has its own dynamically generated page, enabling users to view full details of their selected dinosaur.
 - Details include name, image, type of dinosaur, length, diet, when it lived, type of species, description, taxonomy, and named by.
-- **Dinosaur Location Map**:  The location of the selected dinosaur is displayed on a map
+- **Dinosaur Location Map**: The location of the selected dinosaur is displayed on a map
 
 ### Mobile Responsiveness
 
@@ -67,7 +67,7 @@
 <a href="https://github.com/prosealogy"><img src="https://img.shields.io/badge/seanlin-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"></a> <a href="https://www.linkedin.com/in/sean-lin-337491b9/"><img src="https://img.shields.io/badge/seanlin-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 
 <h2 id="project-link">V. Project Link</h2>
-TBA
+https://dinosoul-tier2-team10.netlify.app/
 
 <h2 id="project-style">VI. Project Style</h2>
 
@@ -83,7 +83,6 @@ Favicon
 
 &nbsp;&nbsp;&nbsp;<img src="./src/assets/pin.png" height="40"></br>
 
-
 Typography
 
 **Patua One**
@@ -93,7 +92,6 @@ Typography
 <h2 id="usage">VII. Usage</h2>
 
 _Below is an example of how you can install and setup the application on your device._
-
 
 To set up and run the DinoSoul App locally, follow these steps:
 

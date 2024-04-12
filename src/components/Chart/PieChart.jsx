@@ -1,15 +1,17 @@
-import { Pie } from "@nivo/pie";
-import styles from "./PieChart.module.css";
-import { useContext } from "react";
-import { DinoDataContext } from "../../context/DinoDataContext";
+import { Pie } from '@nivo/pie'
+import styles from './PieChart.module.css'
+import { useContext } from 'react'
+import { DinoDataContext } from '../../context/DinoDataContext'
 
 const PieChart = () => {
-  const { dietData } = useContext(DinoDataContext);
+  const { dietData } = useContext(DinoDataContext)
 
   return (
     <>
       <div className={styles.pieContainer}>
-        <p>Diet Composition</p>
+        <p style={{ textAlign: 'center' }}>
+          Diet Composition for All Dinosaurs
+        </p>
 
         <Pie
           className="pieChart"
@@ -21,45 +23,45 @@ const PieChart = () => {
           padAngle={0.1}
           cornerRadius={1}
           activeOuterRadiusOffset={5}
-          colors={{ scheme: "nivo" }}
+          colors={{ scheme: 'nivo' }}
           borderColor={{
-            from: "color",
-            modifiers: [["darker", 0.6]],
+            from: 'color',
+            modifiers: [['darker', 0.6]]
           }}
           theme={{
             labels: {
               text: {
-                fontSize: 13,
-              },
-            },
+                fontSize: 13
+              }
+            }
           }}
           arcLinkLabelsSkipAngle={200}
           arcLinkLabelsTextColor="white"
           arcLinkLabelsThickness={0}
-          arcLinkLabelsColor={{ from: "color" }}
+          arcLinkLabelsColor={{ from: 'color' }}
           arcLabelsSkipAngle={10}
           arcLabelsTextColor="white"
           legends={[
             {
-              anchor: "bottom",
-              direction: "column",
+              anchor: 'bottom',
+              direction: 'column',
               justify: false,
               translateX: 168,
               translateY: -30,
               itemsSpacing: 12,
               itemWidth: 100,
               itemHeight: 20,
-              itemTextColor: "black",
-              itemDirection: "left-to-right",
+              itemTextColor: 'black',
+              itemDirection: 'left-to-right',
               itemOpacity: 1,
               symbolSize: 14,
-              symbolShape: "square",
-            },
+              symbolShape: 'square'
+            }
           ]}
         />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default PieChart;
+export default PieChart
