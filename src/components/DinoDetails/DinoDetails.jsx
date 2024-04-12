@@ -1,12 +1,10 @@
-import styles from "./DinoDetails.module.css";
-import noImage from "../../assets/large-no-dino-img.png";
-import carnivorousDiet from "@assets/carnivorous.svg";
+import styles from './DinoDetails.module.css'
+import noImage from '../../assets/large-no-dino-img.png'
 
 const DinoDetails = ({ thisDino }) => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.dinoName}>{thisDino.name}</h1>
-      <h1 className={styles.dinoName}>Aegyptosaurus</h1>
       <div className={styles.group}>
         <div className={styles.left}>
           <h3 className={styles.title}>Diet</h3>
@@ -27,10 +25,10 @@ const DinoDetails = ({ thisDino }) => {
         </div>
         <div className={styles.center}>
           <img
-            src={thisDino.imageSrc === "N/A" ? noImage : thisDino.imageSrc}
+            src={thisDino.imageSrc === 'N/A' ? noImage : thisDino.imageSrc}
             alt={`${thisDino.name} image`}
             className={`${
-              thisDino.imageSrc === "N/A" ? styles.noImg : styles.regularImg
+              thisDino.imageSrc === 'N/A' ? styles.noImg : styles.regularImg
             }`}
           />
         </div>
@@ -39,13 +37,13 @@ const DinoDetails = ({ thisDino }) => {
             <div className={styles.property}>
               <span className={styles.propertyTitle}>Weight</span>
               <span className={styles.propertyValue}>
-                {thisDino.weight === "N/A" ? "N/A" : `${thisDino.weight}kg`}{" "}
+                {thisDino.weight === 'N/A' ? 'N/A' : `${thisDino.weight}kg`}{' '}
               </span>
             </div>
             <div className={styles.property}>
               <span className={styles.propertyTitle}>Length</span>
               <span className={styles.propertyValue}>
-                {thisDino.length === "N/A" ? "N/A" : `${thisDino.length}m`}
+                {thisDino.length === 'N/A' ? 'N/A' : `${thisDino.length}m`}
               </span>
             </div>
 
@@ -57,7 +55,7 @@ const DinoDetails = ({ thisDino }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DinoDetails;
+export default DinoDetails
