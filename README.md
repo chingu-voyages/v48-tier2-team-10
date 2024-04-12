@@ -1,4 +1,4 @@
-![image](https://github.com/chingu-voyages/v48-tier2-team-10/assets/120062852/a20bfb73-2485-43be-ab4f-2960139063c1)<h1 id="readme-top">DinoSoul</h1>
+<h1 id="readme-top">DinoSoul</h1>
 
 <p class="header">Welcome to DinoSoul, where you can time travel and discover the world of dinosaurs. This README provides an overview of the app's functionality, features, and the technologies used to bring it to life.</p>
 
